@@ -12,7 +12,14 @@ export function DoctorLoginCard({
   return (
     <form
       onSubmit={onSubmit}
-      className="h-[611px] w-[576px] rounded-[22px] border border-[#26354F] bg-[#121827] px-[34px] pb-[20px] pt-[39px] shadow-[0_28px_80px_rgba(0,0,0,0.22)]"
+      className="
+        h-[780px] w-[980px]
+        rounded-[22px]
+        border border-[#26354F]
+        bg-[#121827]
+        px-[34px] pb-[20px] pt-[39px]
+        shadow-[0_28px_80px_rgba(0,0,0,0.22)]
+      "
     >
       <h1 className="text-[29px] font-black leading-none tracking-[0.01em] text-[#EEF4FC]">
         {content.title}
@@ -28,9 +35,11 @@ export function DoctorLoginCard({
 
       <div className="my-[14px] flex items-center gap-[15px]">
         <div className="h-px flex-1 bg-[#26334B]" />
+
         <span className="text-[11px] font-bold leading-none tracking-[0.12em] text-[#59657B]">
           {content.divider}
         </span>
+
         <div className="h-px flex-1 bg-[#26334B]" />
       </div>
 
@@ -44,7 +53,18 @@ export function DoctorLoginCard({
           value={credentials.email}
           onChange={(event) => onCredentialChange("email", event.target.value)}
           placeholder={content.emailPlaceholder}
-          className="h-[45px] w-full rounded-[9px] border border-[#00D4E9] bg-[#121B2B] px-[21px] text-[13px] font-semibold tracking-[0.03em] text-[#DCE6F3] caret-[#00D4E9] outline-none shadow-[0_0_0_1px_rgba(0,212,233,0.18)] placeholder:text-[#7B8497]"
+          className="
+            h-[45px] w-full
+            rounded-[9px]
+            border border-[#00D4E9]
+            bg-[#121B2B]
+            px-[21px]
+            text-[13px] font-semibold tracking-[0.03em] text-[#DCE6F3]
+            caret-[#00D4E9]
+            outline-none
+            shadow-[0_0_0_1px_rgba(0,212,233,0.18)]
+            placeholder:text-[#7B8497]
+          "
         />
       </div>
 
@@ -61,7 +81,17 @@ export function DoctorLoginCard({
               onCredentialChange("password", event.target.value)
             }
             placeholder={content.passwordPlaceholder}
-            className="h-[45px] w-full rounded-[9px] border border-[#263552] bg-[#151B2B] px-[21px] pr-[48px] text-[13px] font-semibold tracking-[0.08em] text-[#DCE6F3] outline-none placeholder:text-[#A3AABD] focus:border-[#00D4E9]"
+            className="
+              h-[45px] w-full
+              rounded-[9px]
+              border border-[#263552]
+              bg-[#151B2B]
+              px-[21px] pr-[48px]
+              text-[13px] font-semibold tracking-[0.08em] text-[#DCE6F3]
+              outline-none
+              placeholder:text-[#A3AABD]
+              focus:border-[#00D4E9]
+            "
           />
 
           <button
@@ -98,7 +128,14 @@ export function DoctorLoginCard({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-[18px] h-[49px] w-full rounded-[9px] bg-[#10BCD1] text-[14px] font-black leading-none text-[#06111A] transition hover:bg-[#20D5E9] disabled:opacity-70"
+        className="
+          mt-[18px] h-[49px] w-full
+          rounded-[9px]
+          bg-[#10BCD1]
+          text-[14px] font-black leading-none text-[#06111A]
+          transition hover:bg-[#20D5E9]
+          disabled:opacity-70
+        "
       >
         {isSubmitting ? "Signing In..." : content.submitButton}
       </button>

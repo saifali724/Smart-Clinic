@@ -9,7 +9,7 @@ export function SecurityNotice({ text, twoFactor }) {
 
       <button
         type="button"
-        className="mx-auto flex items-center gap-[8px] text-[12px] font-bold leading-none tracking-[0.01em] text-[#00D4E9]"
+        className="mx-auto flex items-center gap-[8px] text-[12px] font-bold leading-none tracking-[0.01em] text-[#00D4E9] transition hover:text-[#33E9F8]"
       >
         {twoFactor}
         <span>→</span>

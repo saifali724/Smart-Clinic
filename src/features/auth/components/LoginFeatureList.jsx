@@ -2,17 +2,34 @@
 
 export function LoginFeatureList({ features }) {
   return (
-    <div className="flex w-[382px] flex-col gap-[10px]">
+    <div style={{ width: "464px" }} className="flex flex-col gap-[12px]">
       {features.map((feature) => (
         <article
           key={feature.title}
-          className="h-[59px] rounded-[8px] border border-[#141D2E] bg-[#060A13] px-[43px] py-[10px]"
+          className="relative overflow-hidden rounded-[10px] border border-[#1A2540] bg-[#0A0F1E]"
+          style={{
+            height: "80px",
+            paddingLeft: "26px",
+            paddingRight: "20px",
+            paddingTop: "18px",
+            paddingBottom: "18px",
+          }}
         >
-          <h3 className="text-[12px] font-extrabold leading-[16px] text-[#EDF3FA]">
+          {/* Cyan left accent bar */}
+          <div
+            className="absolute left-0 top-0 h-full"
+            style={{ width: "4px", background: "#08C8DC", borderRadius: "10px 0 0 10px" }}
+          />
+          <h3
+            className="font-extrabold text-white"
+            style={{ fontSize: "16px", lineHeight: "22px" }}
+          >
             {feature.title}
           </h3>
-
-          <p className="mt-[1px] text-[10px] font-medium leading-[14px] text-[#78889C]">
+          <p
+            className="font-normal text-[#6B7A95]"
+            style={{ fontSize: "13px", lineHeight: "18px", marginTop: "3px" }}
+          >
             {feature.description}
           </p>
         </article>

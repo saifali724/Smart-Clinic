@@ -50,16 +50,15 @@ export function LoginScreenContainer() {
         }}
       />
 
-      {/* Purple circle */}
+      {/* Purple circle — bottom-left, clipped */}
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute rounded-full"
         style={{
-          left: "80px",
-          top: "492px",
-          width: "250px",
-          height: "250px",
-          borderRadius: "50%",
-          background: "rgba(37,40,73,0.70)",
+          left: "30px",
+          bottom: "-160px",
+          width: "380px",
+          height: "380px",
+          background: "rgba(22,20,55,0.88)",
         }}
       />
 
@@ -75,12 +74,12 @@ export function LoginScreenContainer() {
       </div>
 
       {/* Medical card */}
-      <div className="absolute left-[50px] top-[136px]">
+      <div className="absolute left-[90px] top-[176px]">
         <MedicalIllustrationCard />
       </div>
 
       {/* Feature cards */}
-      <div className="absolute left-[50px] top-[506px]">
+      <div className="absolute left-[50px] top-[590px]">
         <LoginFeatureList features={loginContent.leftPanel.features} />
       </div>
 
@@ -99,6 +98,7 @@ export function LoginScreenContainer() {
 
         <button
           type="button"
+          onClick={() => navigate("/signup")}
           className="h-[30px] w-[96px] rounded-[6px] border border-[#08CFE8] bg-transparent text-[11px] font-bold leading-none text-[#08D4E9]"
         >
           {loginContent.topBar.signupButton}
@@ -119,8 +119,8 @@ export function LoginScreenContainer() {
       </div>
 
       <div
-        className="absolute top-[704px]"
-        style={{ left: "calc(35vw + 185px)" }}
+        className="absolute top-[880px]"
+        style={{ left: "calc(35vw + 385px)" }}
       >
         <AuthFooterLinks footer={loginContent.footer} />
       </div>

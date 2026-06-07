@@ -47,7 +47,7 @@ export const loginContent = {
   },
 
   footer: {
-    copyright: "© 2024 MediScan AI",
+    copyright: "© 2026 MediScan AI",
     links: ["Privacy Policy", "Terms of Service", "Support"],
   },
 };

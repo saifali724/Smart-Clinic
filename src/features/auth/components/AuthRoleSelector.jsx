@@ -18,7 +18,7 @@ export function AuthRoleSelector({ label, roles, selectedRole, onRoleChange }) {
                 "h-[29px] rounded-[8px] border text-[11px] font-bold leading-none transition",
                 isActive
                   ? "border-[#00D4E9] bg-[#102032] text-[#00D4E9]"
-                  : "border-[#1F2B43] bg-[#161D2E] text-[#8D96A9]",
+                  : "border-[#1F2B43] bg-[#161D2E] text-[#8D96A9] hover:border-[#00D4E9]/50",
               ].join(" ")}
             >
               {role}
