@@ -6,6 +6,7 @@ export function DoctorLoginCard({
   content,
   credentials,
   isSubmitting,
+  loginError,
   onCredentialChange,
   onSubmit,
 }) {
@@ -125,6 +126,12 @@ export function DoctorLoginCard({
         </button>
       </div>
 
+      {loginError && (
+        <div className="mt-[14px] rounded-[9px] border border-[#FF5C7A]/40 bg-[#FF5C7A]/10 px-[14px] py-[11px] text-[12px] font-semibold text-[#FF8FA3]">
+          {loginError}
+        </div>
+      )}
+
       <button
         type="submit"
         disabled={isSubmitting}
@@ -158,3 +165,5 @@ export function DoctorLoginCard({
     </form>
   );
 }
+
+export default DoctorLoginCard;

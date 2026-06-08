@@ -55,11 +55,12 @@ export const signupContent = {
 
     button: "Continue to License Verification",
     back: "Back to Login",
-    copyright: "© 2024 MediScan AI  ·  For Medical Professionals Only",
+    copyright: "© 2026 MediScan AI  ·  For Medical Professionals Only",
   },
 
   rightPanel: {
-    brand: "MediScan AI",
+    brandCyan: "MediScan ",
+    brandGreen: "AI",
     title: "REGISTRATION STEPS",
 
     steps: [

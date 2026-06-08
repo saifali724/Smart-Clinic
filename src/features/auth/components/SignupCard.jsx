@@ -7,93 +7,87 @@ import { useSignupCredentials } from "../hooks/useSignupCredentials";
 export function SignupCard() {
   const navigate = useNavigate();
 
-  const { credentials, isSubmitting, updateCredential, submitSignup } =
-    useSignupCredentials();
+  const {
+    credentials,
+    isSubmitting,
+    signupError,
+    signupSuccess,
+    updateCredential,
+    submitSignup,
+  } = useSignupCredentials();
 
   return (
-    <section className="w-[980px] rounded-[30px] border border-[#26344F] bg-[#151B2B] px-[48px] py-[38px] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+    <section
+      className="w-[980px] rounded-[30px] border border-[#26344F] bg-[#151B2B] px-[48px] py-[38px] shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+      style={{ animation: "fadeSlideUp 0.7s ease both", animationDelay: "150ms" }}
+    >
       {/* Header */}
-      <h1 className="text-[34px] font-extrabold leading-none tracking-[0.01em] text-[#F5FBFF]">
+      <h1
+        className="text-[34px] font-extrabold leading-none tracking-[0.01em] text-[#F5FBFF]"
+        style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "200ms" }}
+      >
         {signupContent.form.title}
       </h1>
 
-      <p className="mt-[12px] text-[15px] font-medium text-[#77869B]">
+      <p
+        className="mt-[12px] text-[15px] font-medium text-[#77869B]"
+        style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "250ms" }}
+      >
         {signupContent.form.subtitle}
       </p>
 
-      <div className="mt-[16px] flex h-[28px] w-[210px] items-center justify-center rounded-full border border-[#08CFE8] text-[11px] font-semibold text-[#08D4E9]">
+      <div
+        className="mt-[16px] flex h-[28px] w-[210px] items-center justify-center rounded-full border border-[#08CFE8] text-[11px] font-semibold text-[#08D4E9]"
+        style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "300ms" }}
+      >
         {signupContent.form.stepBadge}
       </div>
 
       <div className="mt-[18px] h-px w-full bg-[#24314A]" />
 
-      {/* Form */}
       <form onSubmit={submitSignup} className="mt-[20px]">
         <div className="grid grid-cols-2 gap-x-[20px] gap-y-[16px]">
+          {[
+            { field: "firstName", type: "text" },
+            { field: "lastName", type: "text" },
+            { field: "email", type: "email" },
+            { field: "phone", type: "tel" },
+          ].map(({ field, type }, index) => (
+            <div
+              key={field}
+              style={{
+                animation: "fadeSlideUp 0.5s ease both",
+                animationDelay: `${350 + index * 60}ms`,
+              }}
+            >
+              <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
+                {signupContent.form.fields[field].label}
+              </label>
+              <input
+                type={type}
+                value={credentials[field]}
+                onChange={(e) => updateCredential(field, e.target.value)}
+                placeholder={signupContent.form.fields[field].placeholder}
+                className={`h-[48px] w-full rounded-[9px] border bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] transition-all duration-300 focus:shadow-[0_0_12px_rgba(8,207,232,0.2)] ${
+                  field === "firstName"
+                    ? "border-[#08CFE8] bg-[#172033]"
+                    : "border-[#252F45] focus:border-[#08CFE8]"
+                }`}
+              />
+            </div>
+          ))}
 
-          {/* First Name */}
-          <div>
-            <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
-              {signupContent.form.fields.firstName.label}
-            </label>
-            <input
-              value={credentials.firstName}
-              onChange={(e) => updateCredential("firstName", e.target.value)}
-              placeholder={signupContent.form.fields.firstName.placeholder}
-              className="h-[48px] w-full rounded-[9px] border border-[#08CFE8] bg-[#172033] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B]"
-            />
-          </div>
-
-          {/* Last Name */}
-          <div>
-            <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
-              {signupContent.form.fields.lastName.label}
-            </label>
-            <input
-              value={credentials.lastName}
-              onChange={(e) => updateCredential("lastName", e.target.value)}
-              placeholder={signupContent.form.fields.lastName.placeholder}
-              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] focus:border-[#08CFE8]"
-            />
-          </div>
-
-          {/* Professional Email */}
-          <div>
-            <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
-              {signupContent.form.fields.email.label}
-            </label>
-            <input
-              value={credentials.email}
-              onChange={(e) => updateCredential("email", e.target.value)}
-              placeholder={signupContent.form.fields.email.placeholder}
-              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] focus:border-[#08CFE8]"
-            />
-          </div>
-
-          {/* Phone Number */}
-          <div>
-            <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
-              {signupContent.form.fields.phone.label}
-            </label>
-            <input
-              value={credentials.phone}
-              onChange={(e) => updateCredential("phone", e.target.value)}
-              placeholder={signupContent.form.fields.phone.placeholder}
-              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] focus:border-[#08CFE8]"
-            />
-          </div>
-
-          {/* Medical Specialization */}
-          <div>
+          {/* Specialization */}
+          <div style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "590ms" }}>
             <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
               {signupContent.form.fields.specialization.label}
             </label>
             <select
               value={credentials.specialization}
               onChange={(e) => updateCredential("specialization", e.target.value)}
-              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#64748B] outline-none focus:border-[#08CFE8]"
+              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none transition-all duration-300 focus:border-[#08CFE8] focus:shadow-[0_0_12px_rgba(8,207,232,0.2)]"
             >
-              <option value="">Cardiology</option>
+              <option value="">Select specialization</option>
               <option value="General Medicine">General Medicine</option>
               <option value="Cardiology">Cardiology</option>
               <option value="Neurology">Neurology</option>
@@ -101,8 +95,8 @@ export function SignupCard() {
             </select>
           </div>
 
-          {/* PMC License */}
-          <div>
+          {/* License */}
+          <div style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "650ms" }}>
             <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
               {signupContent.form.fields.license.label}
             </label>
@@ -111,7 +105,7 @@ export function SignupCard() {
                 value={credentials.license}
                 onChange={(e) => updateCredential("license", e.target.value)}
                 placeholder={signupContent.form.fields.license.placeholder}
-                className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] pr-[40px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] focus:border-[#08CFE8]"
+                className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] pr-[40px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] transition-all duration-300 focus:border-[#08CFE8] focus:shadow-[0_0_12px_rgba(8,207,232,0.2)]"
               />
               <span className="absolute right-[14px] top-1/2 -translate-y-1/2 text-[15px] text-[#1EE48A]">
                 ✓
@@ -120,7 +114,7 @@ export function SignupCard() {
           </div>
 
           {/* Hospital */}
-          <div>
+          <div style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "710ms" }}>
             <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
               {signupContent.form.fields.hospital.label}
             </label>
@@ -128,34 +122,65 @@ export function SignupCard() {
               value={credentials.hospital}
               onChange={(e) => updateCredential("hospital", e.target.value)}
               placeholder={signupContent.form.fields.hospital.placeholder}
-              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] focus:border-[#08CFE8]"
+              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] transition-all duration-300 focus:border-[#08CFE8] focus:shadow-[0_0_12px_rgba(8,207,232,0.2)]"
             />
           </div>
 
           {/* Designation */}
-          <div>
+          <div style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "770ms" }}>
             <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
               {signupContent.form.fields.designation.label}
             </label>
             <select
               value={credentials.designation}
               onChange={(e) => updateCredential("designation", e.target.value)}
-              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#64748B] outline-none focus:border-[#08CFE8]"
+              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none transition-all duration-300 focus:border-[#08CFE8] focus:shadow-[0_0_12px_rgba(8,207,232,0.2)]"
             >
-              <option value="">Senior Consultant</option>
+              <option value="">Select designation</option>
               <option value="Consultant">Consultant</option>
               <option value="Senior Consultant">Senior Consultant</option>
               <option value="Medical Officer">Medical Officer</option>
             </select>
           </div>
+
+          {/* Password */}
+          <div style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "830ms" }}>
+            <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
+              PASSWORD
+            </label>
+            <input
+              type="password"
+              value={credentials.password}
+              onChange={(e) => updateCredential("password", e.target.value)}
+              placeholder="Create secure password"
+              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] transition-all duration-300 focus:border-[#08CFE8] focus:shadow-[0_0_12px_rgba(8,207,232,0.2)]"
+            />
+          </div>
+
+          {/* Confirm Password */}
+          <div style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "890ms" }}>
+            <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
+              CONFIRM PASSWORD
+            </label>
+            <input
+              type="password"
+              value={credentials.confirmPassword}
+              onChange={(e) => updateCredential("confirmPassword", e.target.value)}
+              placeholder="Confirm secure password"
+              className="h-[48px] w-full rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] text-[14px] font-medium text-[#DDEBFF] outline-none placeholder:text-[#64748B] transition-all duration-300 focus:border-[#08CFE8] focus:shadow-[0_0_12px_rgba(8,207,232,0.2)]"
+            />
+          </div>
         </div>
 
         {/* Profile Photo */}
-        <div className="mt-[18px]">
+        <div
+          className="mt-[18px]"
+          style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "950ms" }}
+        >
           <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
             {signupContent.form.uploadTitle}
           </label>
-          <div className="flex h-[58px] items-center rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px]">
+          <div className="flex h-[58px] items-center rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] transition-all duration-300 hover:border-[#08CFE8]/40 hover:bg-[#1D2540]">
             <span className="mr-[14px] text-[20px] text-[#8EA6BE]">⌕</span>
             <div>
               <p className="text-[13px] font-medium text-[#8EA6BE]">
@@ -169,8 +194,24 @@ export function SignupCard() {
           </div>
         </div>
 
+        {/* Error / Success Message */}
+        {(signupError || signupSuccess) && (
+          <div
+            className={`mt-[14px] rounded-[9px] border px-[14px] py-[11px] text-[12px] font-semibold ${
+              signupError
+                ? "border-[#FF5C7A]/40 bg-[#FF5C7A]/10 text-[#FF8FA3]"
+                : "border-[#1EE48A]/40 bg-[#1EE48A]/10 text-[#6DFFB4]"
+            }`}
+          >
+            {signupError || signupSuccess}
+          </div>
+        )}
+
         {/* Agreement */}
-        <label className="mt-[16px] flex items-center gap-[10px] text-[12px] font-medium text-[#8794A9]">
+        <label
+          className="mt-[16px] flex items-center gap-[10px] text-[12px] font-medium text-[#8794A9]"
+          style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "1000ms" }}
+        >
           <input
             type="checkbox"
             checked={credentials.agreeTerms}
@@ -181,26 +222,31 @@ export function SignupCard() {
         </label>
 
         {/* Buttons */}
-        <div className="mt-[18px] flex items-center gap-[28px]">
+        <div
+          className="mt-[18px] flex items-center gap-[28px]"
+          style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "1050ms" }}
+        >
           <button
             type="submit"
             disabled={isSubmitting}
-            className="h-[50px] flex-1 rounded-[9px] bg-[#08D4E9] text-[14px] font-extrabold text-[#06101D] shadow-[0_18px_35px_rgba(8,212,233,0.24)] transition hover:bg-[#19E6F4] disabled:opacity-70"
+            className="h-[50px] flex-1 rounded-[9px] bg-[#08D4E9] text-[14px] font-extrabold text-[#06101D] shadow-[0_18px_35px_rgba(8,212,233,0.24)] transition-all duration-300 hover:bg-[#19E6F4] hover:shadow-[0_18px_40px_rgba(8,212,233,0.4)] hover:scale-[1.01] disabled:opacity-70"
           >
-            {isSubmitting ? "Please wait..." : `${signupContent.form.button} →`}
+            {isSubmitting ? "Creating account..." : `${signupContent.form.button} →`}
           </button>
 
           <button
             type="button"
             onClick={() => navigate("/")}
-            className="text-[12px] font-semibold text-[#64748B] transition hover:text-[#08D4E9]"
+            className="text-[12px] font-semibold text-[#64748B] transition-all duration-300 hover:text-[#08D4E9]"
           >
             ← {signupContent.form.back}
           </button>
         </div>
 
-        {/* Footer */}
-        <p className="mt-[22px] text-center text-[11px] font-medium text-[#64748B]">
+        <p
+          className="mt-[22px] text-center text-[11px] font-medium text-[#64748B]"
+          style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "1100ms" }}
+        >
           {signupContent.form.copyright}
         </p>
       </form>
