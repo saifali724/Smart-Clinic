@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "retakeRequired": false,
+  "error": "",
+  "source": "PaddleOCR_Local_Excellent",
+  "quality": {
+    "blurScore": 275.06,
+    "brightness": 168.89,
+    "contrast": 35.26,
+    "width": 487,
+    "height": 780,
+    "tooSmall": true,
+    "tooBlurry": false,
+    "tooDark": false,
+    "tooBright": false,
+    "lowContrast": false,
+    "qualityOk": false
+  },
+  "fullName": "A Seme Ee Anss O Js",
+  "fatherName": "Ny Poor O Nz T Oz Stte Z Eet A",
+  "gender": "",
+  "cnic": "55540-1805000-2",
+  "dateOfBirth": "",
+  "age": "",
+  "rawText": "\na) _ seme ee anss}4o 180 Js\n\nNy poor o'nz | T-Oz9stte-Z0eET a\n. wig 0 seg]. PRMANAANOPL\n\n+ prey Anueprreuonen NYUICINWd TA\nen wren &\n7E0T EO VE\n\nanss} jo 2380\n\n“a\n\nAndig j0 2180\n\npoor corre | T-0zgstte-z0eet\n\noor\n\npura 40 822G\n\n—\n\nye\n\n*D |\n\nWw\n\nA gel\n\neg HM\n\n9404 Ain\n\niy\n\nwey sespy pe\n\nfweyn syed,\n\nee\n\nae\n\nweUy HIV HS\n\nN¥LEDMVd 30 OMENdaY SUNY TS!\n\nPor preg Auep; jeuonen NWI CIMWd\n\nis",
+  "filledCount": 3,
+  "confidenceScore": 75,
+  "debugFiles": {
+    "latestInput": "D:\\smart-clinic\\backend\\python_ocr\\debug\\latest_input.jpg",
+    "rawText": "D:\\smart-clinic\\backend\\python_ocr\\debug\\latest_raw_text.txt",
+    "ocrLines": "D:\\smart-clinic\\backend\\python_ocr\\debug\\latest_ocr_lines.json"
+  }
+}
