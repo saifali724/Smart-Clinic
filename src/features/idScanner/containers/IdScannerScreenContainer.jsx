@@ -4,6 +4,7 @@ import IdScannerTopBar from "../components/IdScannerTopBar";
 import PatientQueue from "../components/PatientQueue";
 import ScannerPanel from "../components/ScannerPanel";
 import ScannerStats from "../components/ScannerStats";
+import SystemLog from "../components/SystemLog";
 import { formFields } from "../data/idScannerContent";
 import { useIdScanner } from "../hooks/useIdScanner";
 
@@ -101,6 +102,7 @@ export function IdScannerScreenContainer() {
               onSelectPatient={selectPatient}
             />
             <ScannerStats />
+            <SystemLog />
           </section>
         </section>
       </div>

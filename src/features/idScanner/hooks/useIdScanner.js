@@ -127,7 +127,7 @@ export function useIdScanner() {
       setOcrStatus("Fields filled. Review and save.");
     } catch (err) {
       console.error("OCR error:", err);
-      setCameraError("OCR failed. Try a clearer image with good lighting.");
+      setCameraError(err.message || "OCR failed. Try a clearer image with good lighting.");
       setOcrStatus("");
       setScanProgress(0);
     } finally {

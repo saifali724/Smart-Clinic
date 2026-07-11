@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { createPortal } from "react-dom";
+import SensorStatusList from "./SensorStatusList";
 
 export function ScannerPanel({
   videoRef,
@@ -112,30 +113,63 @@ export function ScannerPanel({
       <div className="flex h-full flex-col">
         {/* Header */}
         <div className="text-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.1em] text-[#00C2E0]">
+          <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[#00C2E0]">
             Patient ID Scanner
           </p>
           <p className="mt-[10px] text-[12px] font-medium text-[#8B96AA]">
-            Select token → Scan or Upload CNIC → Auto-fill fields
+            Position card within the scan frame below
           </p>
         </div>
 
-        {/* Preview box */}
-        <div className="relative mt-[18px] aspect-[1.58/1] w-full overflow-hidden rounded-[10px] bg-[#0B0E14]">
+        {/* Preview box — mock National ID card */}
+        <div className="relative mt-[18px] aspect-[1.58/1] w-full overflow-hidden rounded-[10px] border border-[#1A2740] bg-[#0B0E14]">
           <span className="absolute left-0 top-0 z-20 h-[28px] w-[28px] border-l-2 border-t-2 border-[#00C2E0]" />
           <span className="absolute right-0 top-0 z-20 h-[28px] w-[28px] border-r-2 border-t-2 border-[#00C2E0]" />
           <span className="absolute bottom-0 left-0 z-20 h-[28px] w-[28px] border-b-2 border-l-2 border-[#00C2E0]" />
           <span className="absolute bottom-0 right-0 z-20 h-[28px] w-[28px] border-b-2 border-r-2 border-[#00C2E0]" />
-          <div className="flex h-full flex-col items-center justify-center text-center">
-            <div className="mb-4 flex h-[54px] w-[54px] items-center justify-center rounded-full border border-[#00C2E0]/45 bg-[#00C2E0]/10 text-[25px] text-[#00C2E0]">
-              ▣
+
+          {/* mock card */}
+          <div
+            className="absolute inset-[16%_10%] rounded-[8px] border"
+            style={{ borderColor: "#243651", background: "#0E1526" }}
+          >
+            <div className="flex h-full flex-col px-[14px] py-[11px]">
+              <p className="text-[7px] font-black uppercase tracking-[0.12em] text-[#59657B]">
+                National ID Card
+              </p>
+
+              {/* photo strip lines */}
+              <div className="mt-[10px] flex gap-[6px]">
+                {[0, 1, 2, 3].map((n) => (
+                  <span key={n} className="h-[9px] flex-1 rounded-[2px] bg-[#243651]" />
+                ))}
+              </div>
+
+              <p className="mt-[12px] text-[6px] font-black uppercase tracking-[0.12em] text-[#59657B]">
+                Patient Name
+              </p>
+
+              <div className="mt-[3px] flex items-start justify-between">
+                <p className="text-[12px] font-black leading-none text-[#EEF4FC]">
+                  Ahmed Hassan
+                </p>
+                <p className="text-[13px] font-black leading-none text-[#FF5C7A]">
+                  B+
+                </p>
+              </div>
+
+              <p className="mt-[8px] text-[7px] font-medium text-[#8B96AA]">
+                DOB: 15-03-1985&nbsp;&nbsp;&nbsp;Blood: B+
+              </p>
+              <p className="mt-[3px] text-[7px] font-medium text-[#8B96AA]">
+                CNIC: 35202-1234567-9
+              </p>
             </div>
-            <p className="text-[14px] font-black text-[#DCE6F3]">CNIC Scanner Ready</p>
-            <p className="mt-2 text-[12px] font-medium text-[#64748B]">
-              Use camera or upload a CNIC photo
-            </p>
           </div>
         </div>
+
+        {/* Connected Sensors */}
+        <SensorStatusList />
 
         {/* Status box */}
         <div className="mt-[16px] rounded-[9px] border border-[#252B36] bg-[#0B0E14] px-[14px] py-[12px]">
@@ -159,11 +193,12 @@ export function ScannerPanel({
           )}
         </div>
 
-        {/* OCR Progress */}
-        <div className="mt-[16px]">
+        {/* Scan Progress */}
+        <div className="mt-[20px]">
           <div className="mb-[7px] flex items-center justify-between text-[10px] font-medium">
-            <span className="text-[#8B96AA]">OCR Progress</span>
-            <span className="font-bold text-[#00C2E0]">{scanProgress}%</span>
+            <span className="text-[#8B96AA]">
+              Scan Progress <span className="text-[#59657B]">—</span> {scanProgress}% Complete
+            </span>
           </div>
           <div className="h-[8px] overflow-hidden rounded-full border border-[#26344F] bg-[#0B0E14]">
             <div
@@ -175,7 +210,6 @@ export function ScannerPanel({
 
         {/* Buttons */}
         <div className="mt-auto pt-[20px] space-y-[10px]">
-
           {/* Camera button */}
           <button
             type="button"
@@ -187,7 +221,7 @@ export function ScannerPanel({
               ? "📷 Camera Active..."
               : isScanning
               ? "⏳ Processing CNIC..."
-              : "📷 Open Camera & Scan"}
+              : "▶  Begin Scan Session"}
           </button>
 
           {/* Upload button */}
@@ -215,7 +249,6 @@ export function ScannerPanel({
                 if (dataUrl) onUploadCnic(dataUrl);
               };
               reader.readAsDataURL(file);
-              // Reset so same file can be re-selected
               e.target.value = "";
             }}
           />

@@ -748,7 +748,7 @@ def guess_names(text, lines):
     for line in texts:
         candidate = clean_name(line)
         if candidate and candidate not in name_candidates:
-            name_candidates.append(candidate)
+            name_candidates.append(candidate)   
 
     if not full_name and len(name_candidates) >= 1:
         full_name = name_candidates[0]

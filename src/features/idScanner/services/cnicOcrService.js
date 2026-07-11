@@ -1,35 +1,38 @@
 // src/features/idScanner/services/cnicOcrService.js
+// Calls the CNIC OCR backend (now Node + Gemini Vision, previously Python/PaddleOCR).
+
+const OCR_ENDPOINT = "http://localhost:5001/api/scan-cnic";
 
 export async function extractCnicDataFromImage(imageDataUrl, onProgress) {
   if (onProgress) onProgress(5);
 
-  // Convert captured camera image DataURL into Blob
-  const imageBlob = await fetch(imageDataUrl).then((response) =>
-    response.blob(),
-  );
+  const imageBlob = await fetch(imageDataUrl).then((response) => response.blob());
 
   if (onProgress) onProgress(15);
 
   const formData = new FormData();
   formData.append("image", imageBlob, "cnic-capture.png");
 
-  // Send image to Python OCR Flask service
-  const response = await fetch("http://localhost:5001/api/scan-cnic", {
-    method: "POST",
-    body: formData,
-  });
+  let response;
+  try {
+    response = await fetch(OCR_ENDPOINT, { method: "POST", body: formData });
+  } catch {
+    throw new Error(
+      "Cannot reach the OCR service. Make sure it is running: cd backend/node_ocr && npm start"
+    );
+  }
 
   if (onProgress) onProgress(80);
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(errorText || "Python OCR service failed");
+  let result;
+  try {
+    result = await response.json();
+  } catch {
+    throw new Error("OCR service returned an invalid response.");
   }
 
-  const result = await response.json();
-
-  if (!result.success) {
-    throw new Error(result.error || "CNIC OCR failed");
+  if (!response.ok || !result.success) {
+    throw new Error(result?.error || "CNIC OCR failed");
   }
 
   if (onProgress) onProgress(100);

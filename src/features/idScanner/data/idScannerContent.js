@@ -55,51 +55,30 @@ export const patientQueue = [
 ];
 
 export const scannerStats = [
-  {
-    value: "8",
-    label: "Scanned",
-    color: "#3CF3A7",
-  },
-  {
-    value: "4",
-    label: "In Queue",
-    color: "#FFB020",
-  },
-  {
-    value: "1,247",
-    label: "Total Records",
-    color: "#00C2E0",
-  },
-  {
-    value: "12s",
-    label: "Avg Scan Time",
-    color: "#A78BFA",
-  },
+  { value: "8", label: "Scanned", color: "#3CF3A7" },
+  { value: "4", label: "In Queue", color: "#FFB020" },
+  { value: "1,247", label: "Total Records", color: "#00C2E0" },
+  { value: "12s", label: "Avg Scan Time", color: "#A78BFA" },
+];
+
+export const connectedSensors = [
+  { name: "NFC Reader", status: "Active", online: true },
+  { name: "Camera (OCR)", status: "Active", online: true },
+  { name: "Biometric Module", status: "Offline", online: false },
+];
+
+export const systemLog = [
+  { time: "09:14:32", text: "NFC signal detected — card approaching sensor", tone: "muted" },
+  { time: "09:14:33", text: "Barcode ID validated: #PT-2847", tone: "muted" },
+  { time: "09:14:34", text: "Patient record fetched — Ahmed Hassan", tone: "muted" },
+  { time: "09:14:35", text: "Fields auto-populated ✓  Redirecting to record…", tone: "primary" },
 ];
 
 export const formFields = [
-  {
-    name: "fullName",
-    label: "FULL NAME",
-  },
-  {
-    name: "fatherName",
-    label: "FATHER NAME",
-  },
-  {
-    name: "gender",
-    label: "GENDER",
-  },
-  {
-    name: "cnic",
-    label: "CNIC",
-  },
-  {
-    name: "dateOfBirth",
-    label: "DATE OF BIRTH",
-  },
-  {
-    name: "age",
-    label: "AGE",
-  },
+  { name: "fullName", label: "FULL NAME" },
+  { name: "fatherName", label: "FATHER NAME" },
+  { name: "gender", label: "GENDER" },
+  { name: "cnic", label: "CNIC" },
+  { name: "dateOfBirth", label: "DATE OF BIRTH" },
+  { name: "age", label: "AGE" },
 ];
