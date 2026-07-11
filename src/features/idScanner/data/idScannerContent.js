@@ -1,5 +1,7 @@
 // src/features/idScanner/data/idScannerContent.js
 
+import { PRIORITY_LEVELS } from "../services/queueService";
+
 export const emptyExtractedPatient = {
   fullName: "",
   fatherName: "",
@@ -12,45 +14,39 @@ export const emptyExtractedPatient = {
 export const patientQueue = [
   {
     id: "#PT-2847",
+    sequence: 1,
     token: "Patient 1",
     initials: "P1",
-    time: "Checked in 5m ago",
+    priority: PRIORITY_LEVELS.NORMAL,
+    time: "Checked in 22m ago",
     status: "Waiting",
   },
   {
     id: "#PT-2848",
+    sequence: 2,
     token: "Patient 2",
     initials: "P2",
-    time: "Checked in 12m ago",
+    priority: PRIORITY_LEVELS.CRITICAL,
+    time: "Checked in 14m ago",
     status: "Waiting",
   },
   {
     id: "#PT-2849",
+    sequence: 3,
     token: "Patient 3",
     initials: "P3",
-    time: "Checked in 18m ago",
+    priority: PRIORITY_LEVELS.URGENT,
+    time: "Checked in 9m ago",
     status: "Waiting",
   },
   {
     id: "#PT-2850",
+    sequence: 4,
     token: "Patient 4",
     initials: "P4",
-    time: "Tomorrow, 10:00 AM",
-    status: "Scheduled",
-  },
-  {
-    id: "#PT-2851",
-    token: "Patient 5",
-    initials: "P5",
-    time: "Tomorrow, 10:30 AM",
-    status: "Scheduled",
-  },
-  {
-    id: "#PT-2852",
-    token: "Patient 6",
-    initials: "P6",
-    time: "Tomorrow, 11:00 AM",
-    status: "Scheduled",
+    priority: PRIORITY_LEVELS.NORMAL,
+    time: "Checked in 3m ago",
+    status: "Waiting",
   },
 ];
 
@@ -70,7 +66,7 @@ export const connectedSensors = [
 export const systemLog = [
   { time: "09:14:32", text: "NFC signal detected — card approaching sensor", tone: "muted" },
   { time: "09:14:33", text: "Barcode ID validated: #PT-2847", tone: "muted" },
-  { time: "09:14:34", text: "Patient record fetched — Ahmed Hassan", tone: "muted" },
+  { time: "09:14:34", text: "Patient record fetched — Patient 1 (#PT-2847)", tone: "muted" },
   { time: "09:14:35", text: "Fields auto-populated ✓  Redirecting to record…", tone: "primary" },
 ];
 

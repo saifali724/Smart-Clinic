@@ -5,6 +5,7 @@ import LoginPage from "../features/auth/pages/LoginPage";
 import SignupPage from "../features/auth/pages/SignupPage";
 import HomePage from "../features/dashboard/pages/HomePage";
 import IdScannerPage from "../features/idScanner/pages/IdScannerPage";
+import PatientDetailPage from "../features/patients/pages/PatientDetailPage";
 import ProtectedRoute from "../shared/components/routes/ProtectedRoute";
 
 export default function App() {
@@ -12,11 +13,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-
         <Route path="/signup" element={<SignupPage />} />
-
         <Route path="/idscanner" element={<IdScannerPage />} />
-
+        <Route path="/patientrecord" element={<PatientDetailPage />} />
         <Route
           path="/home"
           element={
@@ -25,7 +24,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

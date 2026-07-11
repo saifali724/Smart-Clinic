@@ -1,5 +1,18 @@
 // src/features/idScanner/components/QueuePatientRow.jsx
 
+function getPriorityStyles(priority) {
+  if (priority === "Critical") {
+    return "border-[#FF5C7A] bg-[#FF5C7A]/10 text-[#FF5C7A]";
+  }
+
+  if (priority === "Urgent") {
+    return "border-[#FF8A3D] bg-[#FF8A3D]/10 text-[#FF8A3D]";
+  }
+
+  // Normal Schedule (and any unknown value) stays muted.
+  return "border-[#64748B] bg-[#64748B]/10 text-[#8B96AA]";
+}
+
 function getStatusStyles(status) {
   if (status === "Scanning") {
     return "border-[#00C2E0] bg-[#00C2E0]/10 text-[#00C2E0]";
@@ -48,6 +61,16 @@ export function QueuePatientRow({ patient, selected, onSelect }) {
           <span className="text-[#8B96AA]">{patient.time}</span>
         </p>
       </div>
+
+      {patient.priority && (
+        <span
+          className={`ml-[10px] flex h-[21px] items-center justify-center rounded-full border px-[12px] text-[8px] font-black ${getPriorityStyles(
+            patient.priority,
+          )}`}
+        >
+          {patient.priority}
+        </span>
+      )}
 
       <span
         className={`ml-[10px] flex h-[21px] min-w-[78px] items-center justify-center rounded-full border px-[12px] text-[8px] font-black ${getStatusStyles(

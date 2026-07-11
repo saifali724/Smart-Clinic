@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { emptyExtractedPatient, patientQueue } from "../data/idScannerContent";
 import { extractCnicDataFromImage } from "../services/cnicOcrService";
 import { savePatientRecord } from "../services/idScannerService";
+import { addPatientToQueue, sortQueueByPriority } from "../services/queueService";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -22,7 +23,8 @@ export function useIdScanner() {
   const [scanProgress, setScanProgress] = useState(0);
   const [ocrStatus, setOcrStatus] = useState("");
   const [ocrRawText, setOcrRawText] = useState("");
-  const [patients, setPatients] = useState(patientQueue);
+  // Queue is always kept in priority order: Critical -> Urgent -> Normal.
+  const [patients, setPatients] = useState(() => sortQueueByPriority(patientQueue));
   const [selectedPatientId, setSelectedPatientId] = useState("");
   const [formData, setFormData] = useState(emptyExtractedPatient);
   const [isSaving, setIsSaving] = useState(false);
@@ -201,6 +203,13 @@ export function useIdScanner() {
     setSelectedPatientId(patient.id);
   }
 
+  // Called by the Registration Desk / Admin section when a patient arrives:
+  // assigns the next dynamic Patient ID + anonymised token and re-sorts the
+  // queue so Critical entries jump to the top automatically.
+  function registerPatientInQueue(priority) {
+    setPatients((previousQueue) => addPatientToQueue(previousQueue, priority));
+  }
+
   function updateFormField(e) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -246,6 +255,7 @@ export function useIdScanner() {
     closeCameraModal,
     resetScanner,
     selectPatient,
+    registerPatientInQueue,
     updateFormField,
     confirmAndSavePatient,
   };
