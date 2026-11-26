@@ -5,32 +5,31 @@ import { connectedSensors } from "../data/idScannerContent";
 export function SensorStatusList() {
   return (
     <div className="mt-[26px]">
-      <p className="mb-[12px] text-[9px] font-black uppercase tracking-[0.1em] text-[#59657B]">
+      <p className="text-[10px] font-bold uppercase leading-[12px] text-[#596685]">
         Connected Sensors
       </p>
 
-      <div className="space-y-[9px]">
-        {connectedSensors.map((sensor) => (
+      <div className="mt-[10px] space-y-[12px]">
+        {connectedSensors.map((sensor, i) => (
           <div
             key={sensor.name}
-            className="flex h-[44px] items-center justify-between rounded-[9px] border border-[#1E2A3E] bg-[#0B0E14] px-[14px]"
+            style={{ animationDelay: `${380 + i * 70}ms` }}
+            className="s-up flex h-[42px] items-center justify-between rounded-[10px] border border-[#2E3852] bg-[#0C0F18] pl-[13px] pr-[39px]"
           >
             <div className="flex items-center gap-[10px]">
               <span
-                className={`h-[7px] w-[7px] rounded-full ${
-                  sensor.online
-                    ? "bg-[#3CF3A7] shadow-[0_0_10px_rgba(60,243,167,0.8)]"
-                    : "bg-[#FF5C7A] shadow-[0_0_10px_rgba(255,92,122,0.8)]"
+                className={`h-[8px] w-[8px] rounded-full ${sensor.online ? "s-blink " : ""}${
+                  sensor.online ? "bg-[#32E293]" : "bg-[#FF6060]"
                 }`}
               />
-              <span className="text-[12px] font-semibold text-[#DCE6F3]">
+              <span className="text-[13px] font-medium leading-none text-[#EDF2FC]">
                 {sensor.name}
               </span>
             </div>
 
             <span
-              className={`text-[11px] font-bold ${
-                sensor.online ? "text-[#3CF3A7]" : "text-[#FF5C7A]"
+              className={`text-[12px] font-normal leading-none ${
+                sensor.online ? "text-[#32E293]" : "text-[#FF6060]"
               }`}
             >
               {sensor.status}

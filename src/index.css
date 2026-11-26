@@ -17,12 +17,21 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
   background: #070b15;
+  overflow-x: hidden; /* safety net: nothing should ever scroll sideways */
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }
 
 button,
@@ -43,3 +52,56 @@ button:disabled {
 input::placeholder {
   font-family: inherit;
 }
+
+/* Thin dark scrollbars for the inner scroll areas (queue, record cards) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2e3852 transparent;
+}
+
+/* Respect users who turn off animations in their OS */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Shared screen animations (used on every screen)
+   m-down  top bars              m-left / m-right  side panels
+   m-up    blocks                m-rise            bottom action bars
+   m-pop   cards / tiles         m-stagger         children appear one by one
+   ─────────────────────────────────────────────────────────────── */
+@keyframes mUp    { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes mDown  { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+@keyframes mLeft  { from { opacity: 0; transform: translateX(-26px) scale(0.99); } to { opacity: 1; transform: none; } }
+@keyframes mRight { from { opacity: 0; transform: translateX(26px) scale(0.99); } to { opacity: 1; transform: none; } }
+@keyframes mRise  { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes mPop   { 0% { opacity: 0; transform: scale(0.94); } 70% { opacity: 1; transform: scale(1.01); } 100% { opacity: 1; transform: none; } }
+
+.m-up    { animation: mUp 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.m-down  { animation: mDown 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.m-left  { animation: mLeft 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.m-right { animation: mRight 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.m-rise  { animation: mRise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.m-pop   { animation: mPop 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* children cascade in: set --m-base (start) and --m-step (gap) on the parent if needed */
+.m-stagger > * {
+  animation: mUp 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--m-base, 120ms) + var(--m-i, 0) * var(--m-step, 55ms));
+}
+.m-stagger > *:nth-child(2)  { --m-i: 1; }
+.m-stagger > *:nth-child(3)  { --m-i: 2; }
+.m-stagger > *:nth-child(4)  { --m-i: 3; }
+.m-stagger > *:nth-child(5)  { --m-i: 4; }
+.m-stagger > *:nth-child(6)  { --m-i: 5; }
+.m-stagger > *:nth-child(7)  { --m-i: 6; }
+.m-stagger > *:nth-child(8)  { --m-i: 7; }
+.m-stagger > *:nth-child(9)  { --m-i: 8; }
+.m-stagger > *:nth-child(10) { --m-i: 9; }
+.m-stagger > *:nth-child(n + 11) { --m-i: 10; }

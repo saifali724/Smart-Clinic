@@ -20,7 +20,7 @@ export function ProtectedRoute({ children }) {
 
   if (isCheckingAuth) {
     return (
-      <main className="flex h-screen w-screen items-center justify-center bg-[#070B15] text-white">
+      <main className="flex min-h-screen w-full items-center justify-center bg-[#070B15] px-[16px] text-white">
         <div className="rounded-[18px] border border-[#26354F] bg-[#121827] px-[28px] py-[22px] text-center shadow-[0_28px_80px_rgba(0,0,0,0.22)]">
           <p className="text-[15px] font-bold text-[#08D4E9]">
             Checking secure session...

@@ -1,81 +1,69 @@
 // src/features/idScanner/components/QueuePatientRow.jsx
 
-function getPriorityStyles(priority) {
-  if (priority === "Critical") {
-    return "border-[#FF5C7A] bg-[#FF5C7A]/10 text-[#FF5C7A]";
-  }
+// Status pill colours from the Figma file
+const STATUS_COLORS = {
+  Scanning: "#00BFD8",
+  Waiting: "#FF9E3D",
+  Completed: "#32E293",
+  Scheduled: "#8C99B8",
+};
 
-  if (priority === "Urgent") {
-    return "border-[#FF8A3D] bg-[#FF8A3D]/10 text-[#FF8A3D]";
-  }
+// Priority shown as coloured text in the second line
+const PRIORITY_COLORS = {
+  Critical: "#FF6060",
+  Urgent: "#FF9E3D",
+};
 
-  // Normal Schedule (and any unknown value) stays muted.
-  return "border-[#64748B] bg-[#64748B]/10 text-[#8B96AA]";
-}
+export function QueuePatientRow({ patient, selected, onSelect, index = 0 }) {
+  const active = selected || patient.status === "Scanning";
+  const statusColor = STATUS_COLORS[patient.status] || "#8C99B8";
+  const priorityColor = PRIORITY_COLORS[patient.priority] || "#8C99B8";
 
-function getStatusStyles(status) {
-  if (status === "Scanning") {
-    return "border-[#00C2E0] bg-[#00C2E0]/10 text-[#00C2E0]";
-  }
-
-  if (status === "Waiting") {
-    return "border-[#D78A21] bg-[#D78A21]/10 text-[#FFB020]";
-  }
-
-  if (status === "Completed") {
-    return "border-[#3CF3A7] bg-[#3CF3A7]/10 text-[#3CF3A7]";
-  }
-
-  return "border-[#64748B] bg-[#64748B]/10 text-[#8B96AA]";
-}
-
-export function QueuePatientRow({ patient, selected, onSelect }) {
   return (
     <button
       type="button"
       onClick={() => onSelect(patient)}
-      className={`flex h-[58px] w-full items-center rounded-[9px] border px-[13px] text-left transition-all duration-300 ${
-        selected || patient.status === "Scanning"
-          ? "border-[#00C2E0] bg-[#0B2433]"
-          : "border-[#1A263A] bg-[#0B0E14] hover:border-[#00C2E0]/40"
+      style={{ animationDelay: `${280 + Math.min(index, 10) * 55}ms` }}
+      className={`s-up flex h-[60px] w-full items-center rounded-[12px] pl-[12px] pr-[12px] text-left sm:pl-[16px] sm:pr-[18px] transition-colors ${
+        active
+          ? "border-[1.5px] border-[#00BFD8] bg-[#00BFD8]/[0.07]"
+          : "border-[0.5px] border-[#2E3852] bg-[#0C0F18] hover:border-[#00BFD8]/60"
       }`}
     >
       <div
-        className={`mr-[12px] flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border text-[11px] font-black ${
-          selected || patient.status === "Scanning"
-            ? "border-[#00C2E0] bg-[#092C3B] text-[#00C2E0]"
-            : "border-[#26344F] bg-[#182235] text-[#8B96AA]"
+        className={`flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-full border text-[13px] font-bold leading-none ${
+          active
+            ? "border-[#00BFD8] bg-[#00BFD8]/20 text-[#00BFD8]"
+            : "border-[#2E3852] bg-[#1A1F2E] text-[#8C99B8]"
         }`}
       >
         {patient.initials}
       </div>
 
-      <div className="min-w-0 flex-1">
-        <p className="truncate text-[13px] font-black leading-none text-[#EEF4FC]">
+      <div className="ml-[12px] min-w-0 flex-1">
+        <p className="truncate text-[14px] font-semibold leading-[17px] text-[#EDF2FC]">
           {patient.token}
         </p>
-
-        <p className="mt-[7px] truncate text-[10px] font-medium text-[#59657B]">
+        <p className="mt-[3px] truncate whitespace-pre text-[11px] font-normal leading-[13px] text-[#8C99B8]">
           {patient.id}
-          <span className="mx-[10px] text-[#334155]">·</span>
-          <span className="text-[#8B96AA]">{patient.time}</span>
+          {/* time is hidden where the row is narrow (phones, and 1024–1279px) so the priority stays visible */}
+          <span className="hidden sm:inline lg:hidden xl:inline">{`   ·   ${patient.time}`}</span>
+          {patient.priority && (
+            <>
+              {"   ·   "}
+              <span style={{ color: priorityColor }}>{patient.priority}</span>
+            </>
+          )}
         </p>
       </div>
 
-      {patient.priority && (
-        <span
-          className={`ml-[10px] flex h-[21px] items-center justify-center rounded-full border px-[12px] text-[8px] font-black ${getPriorityStyles(
-            patient.priority,
-          )}`}
-        >
-          {patient.priority}
-        </span>
-      )}
-
       <span
-        className={`ml-[10px] flex h-[21px] min-w-[78px] items-center justify-center rounded-full border px-[12px] text-[8px] font-black ${getStatusStyles(
-          patient.status,
-        )}`}
+        className="ml-[10px] flex h-[24px] w-[76px] shrink-0 sm:ml-[12px] sm:w-[88px] items-center justify-center rounded-[12px] border-[0.8px] text-[10px] font-semibold leading-none"
+        style={{
+          color: statusColor,
+          borderColor: statusColor,
+          backgroundColor: `${statusColor}26`, // 15% opacity
+        }}
       >
         {patient.status}
       </span>

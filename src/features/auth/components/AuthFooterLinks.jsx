@@ -1,6 +1,6 @@
 export function AuthFooterLinks({ footer }) {
   return (
-    <footer className="mt-[31px] flex items-center justify-center gap-[10px] text-[11px] font-medium leading-none text-[#637088]">
+    <footer className="flex flex-wrap items-center justify-center gap-x-[10px] gap-y-[6px] text-center text-[11px] font-medium leading-none text-[#637088]">
       <span>{footer.copyright}</span>
 
       {footer.links.map((link) => (

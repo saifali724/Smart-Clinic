@@ -3,26 +3,26 @@
 import QueuePatientRow from "./QueuePatientRow";
 
 export function PatientQueue({ patients, selectedPatientId, onSelectPatient }) {
+  const total = patients.length;
+  const completed = patients.filter((p) => p.status === "Completed").length;
+  const remaining = total - completed;
+
   return (
-    <div>
-      <div className="mb-[16px] flex items-center justify-between px-[7px]">
-        <p className="text-[10px] font-black uppercase tracking-[0.08em] text-[#59657B]">
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex flex-wrap items-start justify-between gap-x-[16px] gap-y-[6px] pl-[4px] pr-[4px] sm:pr-[17px]">
+        <p className="text-[11px] font-bold uppercase leading-[13px] text-[#596685]">
           Today's Patient Queue
         </p>
-
-        <p className="text-[11px] font-medium text-[#8B96AA]">
-          12 scheduled
-          <span className="mx-[8px] text-[#41506A]">·</span>
-          8 completed
-          <span className="mx-[8px] text-[#41506A]">·</span>
-          4 remaining
+        <p className="whitespace-pre text-[12px] font-normal leading-[15px] text-[#8C99B8]">
+          {`${total} scheduled  ·  ${completed} completed  ·  ${remaining} remaining`}
         </p>
       </div>
 
-      <div className="space-y-[12px]">
-        {patients.map((patient) => (
+      <div className="mt-[17px] min-h-0 flex-1 space-y-[14px] overflow-y-auto pb-[40px]">
+        {patients.map((patient, i) => (
           <QueuePatientRow
             key={patient.id}
+            index={i}
             patient={patient}
             selected={selectedPatientId === patient.id}
             onSelect={onSelectPatient}

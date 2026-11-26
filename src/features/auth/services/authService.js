@@ -39,7 +39,13 @@ export async function signupDoctor({
     updatedAt: serverTimestamp(),
   };
 
-  await setDoc(doc(db, "users", user.uid), doctorProfile);
+  // The account is already created at this point. If saving the profile fails
+  // (e.g. database rules), still let the doctor in instead of showing "failed".
+  try {
+    await setDoc(doc(db, "users", user.uid), doctorProfile);
+  } catch (error) {
+    console.warn("Account created, but the doctor profile couldn't be saved:", error);
+  }
 
   return doctorProfile;
 }
@@ -48,13 +54,19 @@ export async function loginDoctor(email, password) {
   const userCredential = await signInWithEmailAndPassword(auth, email, password);
   const user = userCredential.user;
 
-  const profileRef = doc(db, "users", user.uid);
-  const profileSnap = await getDoc(profileRef);
+  // Reading the profile is extra — a database error must not block the login.
+  let profile = null;
+  try {
+    const profileSnap = await getDoc(doc(db, "users", user.uid));
+    profile = profileSnap.exists() ? profileSnap.data() : null;
+  } catch (error) {
+    console.warn("Logged in, but the doctor profile couldn't be read:", error);
+  }
 
   return {
     uid: user.uid,
     email: user.email,
-    profile: profileSnap.exists() ? profileSnap.data() : null,
+    profile,
   };
 }
 

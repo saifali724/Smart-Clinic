@@ -1,6 +1,7 @@
 // src/features/idScanner/hooks/useIdScanner.js
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { emptyExtractedPatient, patientQueue } from "../data/idScannerContent";
 import { extractCnicDataFromImage } from "../services/cnicOcrService";
 import { savePatientRecord } from "../services/idScannerService";
@@ -11,6 +12,7 @@ function sleep(ms) {
 }
 
 export function useIdScanner() {
+  const navigate = useNavigate();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const streamRef = useRef(null);
@@ -236,8 +238,29 @@ export function useIdScanner() {
             : p
         )
       );
+
+      // Everything read from the CNIC (plus the queue ID) goes to the Patient Record screen
+      const scannedPatient = {
+        patientId: selectedPatientId,
+        token: selectedPatient?.token || "",
+        fullName: formData.fullName,
+        fatherName: formData.fatherName,
+        gender: formData.gender,
+        cnic: formData.cnic,
+        dateOfBirth: formData.dateOfBirth,
+        age: formData.age,
+      };
+      // Also kept in sessionStorage so the record survives a page refresh
+      try {
+        sessionStorage.setItem("scannedPatient", JSON.stringify(scannedPatient));
+      } catch {
+        // storage blocked — the navigation state below still carries the data
+      }
+
       setSelectedPatientId("");
       resetScanner();
+      window.scrollTo(0, 0); // open the record at the top (matters on phones)
+      navigate("/patientrecord", { state: { patient: scannedPatient } });
     } finally {
       setIsSaving(false);
     }

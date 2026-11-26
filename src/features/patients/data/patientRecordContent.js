@@ -10,6 +10,8 @@ export const defaultVitals = [
 ];
 
 export const emptyPersonalInfo = {
+  patientId: "",
+  token: "",
   fullName: "",
   fatherName: "",
   cnic: "",
@@ -26,6 +28,7 @@ export const emptyPersonalInfo = {
 
 export const personalInfoFields = [
   { name: "fullName", label: "FULL NAME" },
+  { name: "fatherName", label: "FATHER NAME" },
   { name: "cnic", label: "CNIC" },
   { name: "phone", label: "PHONE" },
   { name: "email", label: "EMAIL" },

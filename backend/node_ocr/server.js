@@ -4,8 +4,14 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 
+const { createPasswordResetRouter, createRealDeps } = require("./passwordReset");
+const { createConsultationRouter, createGemini } = require("./consultation");
+
 const app = express();
 app.use(cors());
+
+// Forgot password (email code) — see passwordReset.js
+app.use("/api/auth", createPasswordResetRouter(createRealDeps()));
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -20,6 +26,15 @@ if (!GEMINI_API_KEY) {
   console.error("FATAL: GEMINI_API_KEY missing. Create backend/node_ocr/.env first.");
   process.exit(1);
 }
+
+// Live consultation: transcript + AI analysis — see consultation.js
+app.use(
+  "/api/consult",
+  createConsultationRouter({
+    geminiJson: createGemini({ apiKey: GEMINI_API_KEY, model: GEMINI_MODEL }),
+    aiServiceUrl: process.env.AI_SERVICE_URL || "http://localhost:5002",
+  })
+);
 
 // ---------- Normalizers (ported from Python app.py) ----------
 
@@ -203,4 +218,13 @@ app.post("/api/scan-cnic", upload.single("image"), async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`CNIC OCR service (Gemini) running at http://localhost:${PORT}`);
+
+  // copy every patient into D:\smart-clinic\patient-data (PDFs + Excel list) — see localMirror.js
+  try {
+    const admin = require("firebase-admin");
+    if (admin.apps.length) require("./localMirror").startLocalMirror({ admin });
+    else console.warn("Patient files: serviceAccountKey.json not found — the local patient-data copy is off.");
+  } catch (err) {
+    console.warn(`Patient files are off: ${err.message} (run: npm install)`);
+  }
 });

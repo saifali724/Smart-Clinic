@@ -1,0 +1,5 @@
+model,top-1 accuracy,top-3 accuracy,macro F1,log loss,train time (s)
+Naive Bayes,0.9559,0.9939,0.9572,0.1371,0.3
+Logistic Regression,0.9601,0.9953,0.9616,0.1621,0.9
+Random Forest,0.9468,0.9903,0.9492,0.3035,3.7
+XGBoost,0.9527,0.9937,0.9545,0.1423,16.9

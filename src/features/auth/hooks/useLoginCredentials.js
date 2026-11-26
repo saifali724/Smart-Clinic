@@ -10,8 +10,9 @@ const initialCredentials = {
   role: "Physician",
 };
 
-export function useLoginCredentials({ onLoginSuccess }) {
-  const [credentials, setCredentials] = useState(initialCredentials);
+export function useLoginCredentials({ onLoginSuccess, initialEmail = "" }) {
+  // initialEmail: filled in when coming back from Forgot Password
+  const [credentials, setCredentials] = useState({ ...initialCredentials, email: initialEmail });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState("");
 

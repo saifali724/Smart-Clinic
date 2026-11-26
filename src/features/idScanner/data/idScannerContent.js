@@ -51,10 +51,10 @@ export const patientQueue = [
 ];
 
 export const scannerStats = [
-  { value: "8", label: "Scanned", color: "#3CF3A7" },
-  { value: "4", label: "In Queue", color: "#FFB020" },
-  { value: "1,247", label: "Total Records", color: "#00C2E0" },
-  { value: "12s", label: "Avg Scan Time", color: "#A78BFA" },
+  { value: "8", label: "Scanned", color: "#32E293" },
+  { value: "4", label: "In Queue", color: "#FF9E3D" },
+  { value: "1,247", label: "Total Records", color: "#00BFD8" },
+  { value: "12s", label: "Avg Scan Time", color: "#936AFF" },
 ];
 
 export const connectedSensors = [

@@ -1,0 +1,1129 @@
+{
+  "version": "2026-11-25",
+  "temperature": 0.8988827519794986,
+  "symptoms": [
+    {
+      "key": "itching",
+      "label": "Itching",
+      "severity": 1
+    },
+    {
+      "key": "skin_rash",
+      "label": "Skin rash",
+      "severity": 3
+    },
+    {
+      "key": "nodal_skin_eruptions",
+      "label": "Nodal skin eruptions",
+      "severity": 4
+    },
+    {
+      "key": "continuous_sneezing",
+      "label": "Continuous sneezing",
+      "severity": 4
+    },
+    {
+      "key": "shivering",
+      "label": "Shivering",
+      "severity": 5
+    },
+    {
+      "key": "chills",
+      "label": "Chills",
+      "severity": 3
+    },
+    {
+      "key": "joint_pain",
+      "label": "Joint pain",
+      "severity": 3
+    },
+    {
+      "key": "stomach_pain",
+      "label": "Stomach pain",
+      "severity": 5
+    },
+    {
+      "key": "acidity",
+      "label": "Acidity",
+      "severity": 3
+    },
+    {
+      "key": "ulcers_on_tongue",
+      "label": "Ulcers on tongue",
+      "severity": 4
+    },
+    {
+      "key": "muscle_wasting",
+      "label": "Muscle wasting",
+      "severity": 3
+    },
+    {
+      "key": "vomiting",
+      "label": "Vomiting",
+      "severity": 5
+    },
+    {
+      "key": "burning_micturition",
+      "label": "Burning micturition",
+      "severity": 6
+    },
+    {
+      "key": "spotting_ urination",
+      "label": "Spotting urination",
+      "severity": 3
+    },
+    {
+      "key": "fatigue",
+      "label": "Fatigue",
+      "severity": 4
+    },
+    {
+      "key": "weight_gain",
+      "label": "Weight gain",
+      "severity": 3
+    },
+    {
+      "key": "anxiety",
+      "label": "Anxiety",
+      "severity": 4
+    },
+    {
+      "key": "cold_hands_and_feets",
+      "label": "Cold hands and feets",
+      "severity": 5
+    },
+    {
+      "key": "mood_swings",
+      "label": "Mood swings",
+      "severity": 3
+    },
+    {
+      "key": "weight_loss",
+      "label": "Weight loss",
+      "severity": 3
+    },
+    {
+      "key": "restlessness",
+      "label": "Restlessness",
+      "severity": 5
+    },
+    {
+      "key": "lethargy",
+      "label": "Lethargy",
+      "severity": 2
+    },
+    {
+      "key": "patches_in_throat",
+      "label": "Patches in throat",
+      "severity": 6
+    },
+    {
+      "key": "irregular_sugar_level",
+      "label": "Irregular sugar level",
+      "severity": 5
+    },
+    {
+      "key": "cough",
+      "label": "Cough",
+      "severity": 4
+    },
+    {
+      "key": "high_fever",
+      "label": "High fever",
+      "severity": 7
+    },
+    {
+      "key": "sunken_eyes",
+      "label": "Sunken eyes",
+      "severity": 3
+    },
+    {
+      "key": "breathlessness",
+      "label": "Breathlessness",
+      "severity": 4
+    },
+    {
+      "key": "sweating",
+      "label": "Sweating",
+      "severity": 3
+    },
+    {
+      "key": "dehydration",
+      "label": "Dehydration",
+      "severity": 4
+    },
+    {
+      "key": "indigestion",
+      "label": "Indigestion",
+      "severity": 5
+    },
+    {
+      "key": "headache",
+      "label": "Headache",
+      "severity": 3
+    },
+    {
+      "key": "yellowish_skin",
+      "label": "Yellowish skin",
+      "severity": 3
+    },
+    {
+      "key": "dark_urine",
+      "label": "Dark urine",
+      "severity": 4
+    },
+    {
+      "key": "nausea",
+      "label": "Nausea",
+      "severity": 5
+    },
+    {
+      "key": "loss_of_appetite",
+      "label": "Loss of appetite",
+      "severity": 4
+    },
+    {
+      "key": "pain_behind_the_eyes",
+      "label": "Pain behind the eyes",
+      "severity": 4
+    },
+    {
+      "key": "back_pain",
+      "label": "Back pain",
+      "severity": 3
+    },
+    {
+      "key": "constipation",
+      "label": "Constipation",
+      "severity": 4
+    },
+    {
+      "key": "abdominal_pain",
+      "label": "Abdominal pain",
+      "severity": 4
+    },
+    {
+      "key": "diarrhoea",
+      "label": "Diarrhoea",
+      "severity": 6
+    },
+    {
+      "key": "mild_fever",
+      "label": "Mild fever",
+      "severity": 5
+    },
+    {
+      "key": "yellow_urine",
+      "label": "Yellow urine",
+      "severity": 4
+    },
+    {
+      "key": "yellowing_of_eyes",
+      "label": "Yellowing of eyes",
+      "severity": 4
+    },
+    {
+      "key": "acute_liver_failure",
+      "label": "Acute liver failure",
+      "severity": 6
+    },
+    {
+      "key": "fluid_overload",
+      "label": "Fluid overload",
+      "severity": 4
+    },
+    {
+      "key": "swelling_of_stomach",
+      "label": "Swelling of stomach",
+      "severity": 7
+    },
+    {
+      "key": "swelled_lymph_nodes",
+      "label": "Swelled lymph nodes",
+      "severity": 6
+    },
+    {
+      "key": "malaise",
+      "label": "Malaise",
+      "severity": 6
+    },
+    {
+      "key": "blurred_and_distorted_vision",
+      "label": "Blurred and distorted vision",
+      "severity": 5
+    },
+    {
+      "key": "phlegm",
+      "label": "Phlegm",
+      "severity": 5
+    },
+    {
+      "key": "throat_irritation",
+      "label": "Throat irritation",
+      "severity": 4
+    },
+    {
+      "key": "redness_of_eyes",
+      "label": "Redness of eyes",
+      "severity": 5
+    },
+    {
+      "key": "sinus_pressure",
+      "label": "Sinus pressure",
+      "severity": 4
+    },
+    {
+      "key": "runny_nose",
+      "label": "Runny nose",
+      "severity": 5
+    },
+    {
+      "key": "congestion",
+      "label": "Congestion",
+      "severity": 5
+    },
+    {
+      "key": "chest_pain",
+      "label": "Chest pain",
+      "severity": 7
+    },
+    {
+      "key": "weakness_in_limbs",
+      "label": "Weakness in limbs",
+      "severity": 7
+    },
+    {
+      "key": "fast_heart_rate",
+      "label": "Fast heart rate",
+      "severity": 5
+    },
+    {
+      "key": "pain_during_bowel_movements",
+      "label": "Pain during bowel movements",
+      "severity": 5
+    },
+    {
+      "key": "pain_in_anal_region",
+      "label": "Pain in anal region",
+      "severity": 6
+    },
+    {
+      "key": "bloody_stool",
+      "label": "Bloody stool",
+      "severity": 5
+    },
+    {
+      "key": "irritation_in_anus",
+      "label": "Irritation in anus",
+      "severity": 6
+    },
+    {
+      "key": "neck_pain",
+      "label": "Neck pain",
+      "severity": 5
+    },
+    {
+      "key": "dizziness",
+      "label": "Dizziness",
+      "severity": 4
+    },
+    {
+      "key": "cramps",
+      "label": "Cramps",
+      "severity": 4
+    },
+    {
+      "key": "bruising",
+      "label": "Bruising",
+      "severity": 4
+    },
+    {
+      "key": "obesity",
+      "label": "Obesity",
+      "severity": 4
+    },
+    {
+      "key": "swollen_legs",
+      "label": "Swollen legs",
+      "severity": 5
+    },
+    {
+      "key": "swollen_blood_vessels",
+      "label": "Swollen blood vessels",
+      "severity": 5
+    },
+    {
+      "key": "puffy_face_and_eyes",
+      "label": "Puffy face and eyes",
+      "severity": 5
+    },
+    {
+      "key": "enlarged_thyroid",
+      "label": "Enlarged thyroid",
+      "severity": 6
+    },
+    {
+      "key": "brittle_nails",
+      "label": "Brittle nails",
+      "severity": 5
+    },
+    {
+      "key": "swollen_extremeties",
+      "label": "Swollen extremeties",
+      "severity": 5
+    },
+    {
+      "key": "excessive_hunger",
+      "label": "Excessive hunger",
+      "severity": 4
+    },
+    {
+      "key": "extra_marital_contacts",
+      "label": "Extra marital contacts",
+      "severity": 5
+    },
+    {
+      "key": "drying_and_tingling_lips",
+      "label": "Drying and tingling lips",
+      "severity": 4
+    },
+    {
+      "key": "slurred_speech",
+      "label": "Slurred speech",
+      "severity": 4
+    },
+    {
+      "key": "knee_pain",
+      "label": "Knee pain",
+      "severity": 3
+    },
+    {
+      "key": "hip_joint_pain",
+      "label": "Hip joint pain",
+      "severity": 2
+    },
+    {
+      "key": "muscle_weakness",
+      "label": "Muscle weakness",
+      "severity": 2
+    },
+    {
+      "key": "stiff_neck",
+      "label": "Stiff neck",
+      "severity": 4
+    },
+    {
+      "key": "swelling_joints",
+      "label": "Swelling joints",
+      "severity": 5
+    },
+    {
+      "key": "movement_stiffness",
+      "label": "Movement stiffness",
+      "severity": 5
+    },
+    {
+      "key": "spinning_movements",
+      "label": "Spinning movements",
+      "severity": 6
+    },
+    {
+      "key": "loss_of_balance",
+      "label": "Loss of balance",
+      "severity": 4
+    },
+    {
+      "key": "unsteadiness",
+      "label": "Unsteadiness",
+      "severity": 4
+    },
+    {
+      "key": "weakness_of_one_body_side",
+      "label": "Weakness of one body side",
+      "severity": 4
+    },
+    {
+      "key": "loss_of_smell",
+      "label": "Loss of smell",
+      "severity": 3
+    },
+    {
+      "key": "bladder_discomfort",
+      "label": "Bladder discomfort",
+      "severity": 4
+    },
+    {
+      "key": "foul_smell_of urine",
+      "label": "Foul smell of urine",
+      "severity": 3
+    },
+    {
+      "key": "continuous_feel_of_urine",
+      "label": "Continuous feel of urine",
+      "severity": 6
+    },
+    {
+      "key": "passage_of_gases",
+      "label": "Passage of gases",
+      "severity": 5
+    },
+    {
+      "key": "internal_itching",
+      "label": "Internal itching",
+      "severity": 4
+    },
+    {
+      "key": "toxic_look_(typhos)",
+      "label": "Toxic look",
+      "severity": 5
+    },
+    {
+      "key": "depression",
+      "label": "Depression",
+      "severity": 3
+    },
+    {
+      "key": "irritability",
+      "label": "Irritability",
+      "severity": 2
+    },
+    {
+      "key": "muscle_pain",
+      "label": "Muscle pain",
+      "severity": 2
+    },
+    {
+      "key": "altered_sensorium",
+      "label": "Altered sensorium",
+      "severity": 2
+    },
+    {
+      "key": "red_spots_over_body",
+      "label": "Red spots over body",
+      "severity": 3
+    },
+    {
+      "key": "belly_pain",
+      "label": "Belly pain",
+      "severity": 4
+    },
+    {
+      "key": "abnormal_menstruation",
+      "label": "Abnormal menstruation",
+      "severity": 6
+    },
+    {
+      "key": "dischromic _patches",
+      "label": "Discoloured patches",
+      "severity": 3
+    },
+    {
+      "key": "watering_from_eyes",
+      "label": "Watering from eyes",
+      "severity": 4
+    },
+    {
+      "key": "increased_appetite",
+      "label": "Increased appetite",
+      "severity": 5
+    },
+    {
+      "key": "polyuria",
+      "label": "Polyuria",
+      "severity": 4
+    },
+    {
+      "key": "family_history",
+      "label": "Family history",
+      "severity": 5
+    },
+    {
+      "key": "mucoid_sputum",
+      "label": "Mucoid sputum",
+      "severity": 4
+    },
+    {
+      "key": "rusty_sputum",
+      "label": "Rusty sputum",
+      "severity": 4
+    },
+    {
+      "key": "lack_of_concentration",
+      "label": "Lack of concentration",
+      "severity": 3
+    },
+    {
+      "key": "visual_disturbances",
+      "label": "Visual disturbances",
+      "severity": 3
+    },
+    {
+      "key": "receiving_blood_transfusion",
+      "label": "Receiving blood transfusion",
+      "severity": 5
+    },
+    {
+      "key": "receiving_unsterile_injections",
+      "label": "Receiving unsterile injections",
+      "severity": 2
+    },
+    {
+      "key": "coma",
+      "label": "Coma",
+      "severity": 7
+    },
+    {
+      "key": "stomach_bleeding",
+      "label": "Stomach bleeding",
+      "severity": 6
+    },
+    {
+      "key": "distention_of_abdomen",
+      "label": "Distention of abdomen",
+      "severity": 4
+    },
+    {
+      "key": "history_of_alcohol_consumption",
+      "label": "History of alcohol consumption",
+      "severity": 5
+    },
+    {
+      "key": "fluid_overload.1",
+      "label": "Fluid overload.1",
+      "severity": 3
+    },
+    {
+      "key": "blood_in_sputum",
+      "label": "Blood in sputum",
+      "severity": 5
+    },
+    {
+      "key": "prominent_veins_on_calf",
+      "label": "Prominent veins on calf",
+      "severity": 6
+    },
+    {
+      "key": "palpitations",
+      "label": "Palpitations",
+      "severity": 4
+    },
+    {
+      "key": "painful_walking",
+      "label": "Painful walking",
+      "severity": 2
+    },
+    {
+      "key": "pus_filled_pimples",
+      "label": "Pus filled pimples",
+      "severity": 2
+    },
+    {
+      "key": "blackheads",
+      "label": "Blackheads",
+      "severity": 2
+    },
+    {
+      "key": "scurring",
+      "label": "Scurring",
+      "severity": 2
+    },
+    {
+      "key": "skin_peeling",
+      "label": "Skin peeling",
+      "severity": 3
+    },
+    {
+      "key": "silver_like_dusting",
+      "label": "Silver like dusting",
+      "severity": 2
+    },
+    {
+      "key": "small_dents_in_nails",
+      "label": "Small dents in nails",
+      "severity": 2
+    },
+    {
+      "key": "inflammatory_nails",
+      "label": "Inflammatory nails",
+      "severity": 2
+    },
+    {
+      "key": "blister",
+      "label": "Blister",
+      "severity": 4
+    },
+    {
+      "key": "red_sore_around_nose",
+      "label": "Red sore around nose",
+      "severity": 2
+    },
+    {
+      "key": "yellow_crust_ooze",
+      "label": "Yellow crust ooze",
+      "severity": 3
+    }
+  ],
+  "diseases": [
+    {
+      "name": "AIDS",
+      "description": "Acquired immunodeficiency syndrome (AIDS) is a chronic, potentially life-threatening condition caused by the human immunodeficiency virus (HIV). By damaging your immune system, HIV interferes with your body's ability to fight infection and disease.",
+      "precautions": [
+        "Avoid open cuts",
+        "Wear ppe if possible",
+        "Consult doctor",
+        "Follow up"
+      ]
+    },
+    {
+      "name": "Acne",
+      "description": "Acne vulgaris is the formation of comedones, papules, pustules, nodules, and/or cysts as a result of obstruction and inflammation of pilosebaceous units (hair follicles and their accompanying sebaceous gland). Acne develops on the face and upper trunk. It most often affects adolescents.",
+      "precautions": [
+        "Bath twice",
+        "Avoid fatty spicy food",
+        "Drink plenty of water",
+        "Avoid too many products"
+      ]
+    },
+    {
+      "name": "Alcoholic hepatitis",
+      "description": "Alcoholic hepatitis is a diseased, inflammatory condition of the liver caused by heavy alcohol consumption over an extended period of time. It's also aggravated by binge drinking and ongoing alcohol use. If you develop this condition, you must stop drinking alcohol",
+      "precautions": [
+        "Stop alcohol consumption",
+        "Consult doctor",
+        "Medication",
+        "Follow up"
+      ]
+    },
+    {
+      "name": "Allergy",
+      "description": "An allergy is an immune system response to a foreign substance that's not typically harmful to your body.They can include certain foods, pollen, or pet dander. Your immune system's job is to keep you healthy by fighting harmful pathogens.",
+      "precautions": [
+        "Apply calamine",
+        "Cover area with bandage",
+        "Use ice to compress itching"
+      ]
+    },
+    {
+      "name": "Arthritis",
+      "description": "Arthritis is the swelling and tenderness of one or more of your joints. The main symptoms of arthritis are joint pain and stiffness, which typically worsen with age. The most common types of arthritis are osteoarthritis and rheumatoid arthritis.",
+      "precautions": [
+        "Exercise",
+        "Use hot and cold therapy",
+        "Try acupuncture",
+        "Massage"
+      ]
+    },
+    {
+      "name": "Bronchial Asthma",
+      "description": "Bronchial asthma is a medical condition which causes the airway path of the lungs to swell and narrow. Due to this swelling, the air path produces excess mucus making it hard to breathe, which results in coughing, short breath, and wheezing. The disease is chronic and interferes with daily working.",
+      "precautions": [
+        "Switch to loose cloothing",
+        "Take deep breaths",
+        "Get away from trigger",
+        "Seek help"
+      ]
+    },
+    {
+      "name": "Cervical spondylosis",
+      "description": "Cervical spondylosis is a general term for age-related wear and tear affecting the spinal disks in your neck. As the disks dehydrate and shrink, signs of osteoarthritis develop, including bony projections along the edges of bones (bone spurs).",
+      "precautions": [
+        "Use heating pad or cold pack",
+        "Exercise",
+        "Take otc pain reliver",
+        "Consult doctor"
+      ]
+    },
+    {
+      "name": "Chicken pox",
+      "description": "Chickenpox is a highly contagious disease caused by the varicella-zoster virus (VZV). It can cause an itchy, blister-like rash. The rash first appears on the chest, back, and face, and then spreads over the entire body, causing between 250 and 500 itchy blisters.",
+      "precautions": [
+        "Use neem in bathing",
+        "Consume neem leaves",
+        "Take vaccine",
+        "Avoid public places"
+      ]
+    },
+    {
+      "name": "Chronic cholestasis",
+      "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases",
+      "precautions": [
+        "Cold baths",
+        "Anti itch medicine",
+        "Consult doctor",
+        "Eat healthy"
+      ]
+    },
+    {
+      "name": "Common Cold",
+      "description": "The common cold is a viral infection of your nose and throat (upper respiratory tract). It's usually harmless, although it might not feel that way. Many types of viruses can cause a common cold.",
+      "precautions": [
+        "Drink vitamin c rich drinks",
+        "Take vapour",
+        "Avoid cold food",
+        "Keep fever in check"
+      ]
+    },
+    {
+      "name": "Dengue",
+      "description": "an acute infectious disease caused by a flavivirus (species Dengue virus of the genus Flavivirus), transmitted by aedes mosquitoes, and characterized by headache, severe joint pain, and a rash. \u2014 called also breakbone fever, dengue fever.",
+      "precautions": [
+        "Drink papaya leaf juice",
+        "Avoid fatty spicy food",
+        "Keep mosquitos away",
+        "Keep hydrated"
+      ]
+    },
+    {
+      "name": "Diabetes",
+      "description": "Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy.",
+      "precautions": [
+        "Have balanced diet",
+        "Exercise",
+        "Consult doctor",
+        "Follow up"
+      ]
+    },
+    {
+      "name": "Drug Reaction",
+      "description": "An adverse drug reaction (ADR) is an injury caused by taking medication. ADRs may occur following a single dose or prolonged administration of a drug or result from the combination of two or more drugs.",
+      "precautions": [
+        "Stop irritation",
+        "Consult nearest hospital",
+        "Stop taking drug",
+        "Follow up"
+      ]
+    },
+    {
+      "name": "Fungal infection",
+      "description": "In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi.",
+      "precautions": [
+        "Bath twice",
+        "Use detol or neem in bathing water",
+        "Keep infected area dry",
+        "Use clean cloths"
+      ]
+    },
+    {
+      "name": "GERD",
+      "description": "Gastroesophageal reflux disease, or GERD, is a digestive disorder that affects the lower esophageal sphincter (LES), the ring of muscle between the esophagus and stomach. Many people, including pregnant women, suffer from heartburn or acid indigestion caused by GERD.",
+      "precautions": [
+        "Avoid fatty spicy food",
+        "Avoid lying down after eating",
+        "Maintain healthy weight",
+        "Exercise"
+      ]
+    },
+    {
+      "name": "Gastroenteritis",
+      "description": "Gastroenteritis is an inflammation of the digestive tract, particularly the stomach, and large and small intestines. Viral and bacterial gastroenteritis are intestinal infections associated with symptoms of diarrhea , abdominal cramps, nausea , and vomiting .",
+      "precautions": [
+        "Stop eating solid food for while",
+        "Try taking small sips of water",
+        "Rest",
+        "Ease back into eating"
+      ]
+    },
+    {
+      "name": "Heart attack",
+      "description": "The death of heart muscle due to the loss of blood supply. The loss of blood supply is usually caused by a complete blockage of a coronary artery, one of the arteries that supplies blood to the heart muscle.",
+      "precautions": [
+        "Call ambulance",
+        "Chew or swallow asprin",
+        "Keep calm"
+      ]
+    },
+    {
+      "name": "Hemorrhoids (Piles)",
+      "description": "Hemorrhoids, also spelled haemorrhoids, are vascular structures in the anal canal. In their ... Other names, Haemorrhoids, piles, hemorrhoidal disease .",
+      "precautions": [
+        "Avoid fatty spicy food",
+        "Consume witch hazel",
+        "Warm bath with epsom salt",
+        "Consume alovera juice"
+      ]
+    },
+    {
+      "name": "Hepatitis A",
+      "description": "Hepatitis A is a highly contagious liver infection caused by the hepatitis A virus. The virus is one of several types of hepatitis viruses that cause inflammation and affect your liver's ability to function.",
+      "precautions": [
+        "Consult nearest hospital",
+        "Wash hands through",
+        "Avoid fatty spicy food",
+        "Medication"
+      ]
+    },
+    {
+      "name": "Hepatitis B",
+      "description": "Hepatitis B is an infection of your liver. It can cause scarring of the organ, liver failure, and cancer. It can be fatal if it isn't treated. It's spread when people come in contact with the blood, open sores, or body fluids of someone who has the hepatitis B virus.",
+      "precautions": [
+        "Consult nearest hospital",
+        "Vaccination",
+        "Eat healthy",
+        "Medication"
+      ]
+    },
+    {
+      "name": "Hepatitis C",
+      "description": "Inflammation of the liver due to the hepatitis C virus (HCV), which is usually spread via blood transfusion (rare), hemodialysis, and needle sticks. The damage hepatitis C does to the liver can lead to cirrhosis and its complications as well as cancer.",
+      "precautions": [
+        "Consult nearest hospital",
+        "Vaccination",
+        "Eat healthy",
+        "Medication"
+      ]
+    },
+    {
+      "name": "Hepatitis D",
+      "description": "Hepatitis D, also known as the hepatitis delta virus, is an infection that causes the liver to become inflamed. This swelling can impair liver function and cause long-term liver problems, including liver scarring and cancer. The condition is caused by the hepatitis D virus (HDV).",
+      "precautions": [
+        "Consult doctor",
+        "Medication",
+        "Eat healthy",
+        "Follow up"
+      ]
+    },
+    {
+      "name": "Hepatitis E",
+      "description": "A rare form of liver inflammation caused by infection with the hepatitis E virus (HEV). It is transmitted via food or drink handled by an infected person or through infected water supplies in areas where fecal matter may get into the water. Hepatitis E does not cause chronic liver disease.",
+      "precautions": [
+        "Stop alcohol consumption",
+        "Rest",
+        "Consult doctor",
+        "Medication"
+      ]
+    },
+    {
+      "name": "Hypertension",
+      "description": "Hypertension (HTN or HT), also known as high blood pressure (HBP), is a long-term medical condition in which the blood pressure in the arteries is persistently elevated. High blood pressure typically does not cause symptoms.",
+      "precautions": [
+        "Meditation",
+        "Salt baths",
+        "Reduce stress",
+        "Get proper sleep"
+      ]
+    },
+    {
+      "name": "Hyperthyroidism",
+      "description": "Hyperthyroidism (overactive thyroid) occurs when your thyroid gland produces too much of the hormone thyroxine. Hyperthyroidism can accelerate your body's metabolism, causing unintentional weight loss and a rapid or irregular heartbeat.",
+      "precautions": [
+        "Eat healthy",
+        "Massage",
+        "Use lemon balm",
+        "Take radioactive iodine treatment"
+      ]
+    },
+    {
+      "name": "Hypoglycemia",
+      "description": "Hypoglycemia is a condition in which your blood sugar (glucose) level is lower than normal. Glucose is your body's main energy source. Hypoglycemia is often related to diabetes treatment. But other drugs and a variety of conditions \u2014 many rare \u2014 can cause low blood sugar in people who don't have diabetes.",
+      "precautions": [
+        "Lie down on side",
+        "Check in pulse",
+        "Drink sugary drinks",
+        "Consult doctor"
+      ]
+    },
+    {
+      "name": "Hypothyroidism",
+      "description": "Hypothyroidism, also called underactive thyroid or low thyroid, is a disorder of the endocrine system in which the thyroid gland does not produce enough thyroid hormone.",
+      "precautions": [
+        "Reduce stress",
+        "Exercise",
+        "Eat healthy",
+        "Get proper sleep"
+      ]
+    },
+    {
+      "name": "Impetigo",
+      "description": "Impetigo (im-puh-TIE-go) is a common and highly contagious skin infection that mainly affects infants and children. Impetigo usually appears as red sores on the face, especially around a child's nose and mouth, and on hands and feet. The sores burst and develop honey-colored crusts.",
+      "precautions": [
+        "Soak affected area in warm water",
+        "Use antibiotics",
+        "Remove scabs with wet compressed cloth",
+        "Consult doctor"
+      ]
+    },
+    {
+      "name": "Jaundice",
+      "description": "Yellow staining of the skin and sclerae (the whites of the eyes) by abnormally high blood levels of the bile pigment bilirubin. The yellowing extends to other tissues and body fluids. Jaundice was once called the \"morbus regius\" (the regal disease) in the belief that only the touch of a king could cure it",
+      "precautions": [
+        "Drink plenty of water",
+        "Consume milk thistle",
+        "Eat fruits and high fiberous food",
+        "Medication"
+      ]
+    },
+    {
+      "name": "Malaria",
+      "description": "An infectious disease caused by protozoan parasites from the Plasmodium family that can be transmitted by the bite of the Anopheles mosquito or by a contaminated needle or transfusion. Falciparum malaria is the most deadly type.",
+      "precautions": [
+        "Consult nearest hospital",
+        "Avoid oily food",
+        "Avoid non veg food",
+        "Keep mosquitos out"
+      ]
+    },
+    {
+      "name": "Migraine",
+      "description": "A migraine can cause severe throbbing pain or a pulsing sensation, usually on one side of the head. It's often accompanied by nausea, vomiting, and extreme sensitivity to light and sound. Migraine attacks can last for hours to days, and the pain can be so severe that it interferes with your daily activities.",
+      "precautions": [
+        "Meditation",
+        "Reduce stress",
+        "Use poloroid glasses in sun",
+        "Consult doctor"
+      ]
+    },
+    {
+      "name": "Osteoarthritis",
+      "description": "Osteoarthritis is the most common form of arthritis, affecting millions of people worldwide. It occurs when the protective cartilage that cushions the ends of your bones wears down over time.",
+      "precautions": [
+        "Acetaminophen",
+        "Consult nearest hospital",
+        "Follow up",
+        "Salt baths"
+      ]
+    },
+    {
+      "name": "Paralysis (brain hemorrhage)",
+      "description": "Intracerebral hemorrhage (ICH) is when blood suddenly bursts into brain tissue, causing damage to your brain. Symptoms usually appear suddenly during ICH. They include headache, weakness, confusion, and paralysis, particularly on one side of your body.",
+      "precautions": [
+        "Massage",
+        "Eat healthy",
+        "Exercise",
+        "Consult doctor"
+      ]
+    },
+    {
+      "name": "Paroxysmal Positional Vertigo",
+      "description": "Benign paroxysmal positional vertigo (BPPV) is one of the most common causes of vertigo \u2014 the sudden sensation that you're spinning or that the inside of your head is spinning. Benign paroxysmal positional vertigo causes brief episodes of mild to intense dizziness.",
+      "precautions": [
+        "Lie down",
+        "Avoid sudden change in body",
+        "Avoid abrupt head movment",
+        "Relax"
+      ]
+    },
+    {
+      "name": "Peptic Ulcer Disease",
+      "description": "Peptic ulcer disease (PUD) is a break in the inner lining of the stomach, the first part of the small intestine, or sometimes the lower esophagus. An ulcer in the stomach is called a gastric ulcer, while one in the first part of the intestines is a duodenal ulcer.",
+      "precautions": [
+        "Avoid fatty spicy food",
+        "Consume probiotic food",
+        "Eliminate milk",
+        "Limit alcohol"
+      ]
+    },
+    {
+      "name": "Pneumonia",
+      "description": "Pneumonia is an infection in one or both lungs. Bacteria, viruses, and fungi cause it. The infection causes inflammation in the air sacs in your lungs, which are called alveoli. The alveoli fill with fluid or pus, making it difficult to breathe.",
+      "precautions": [
+        "Consult doctor",
+        "Medication",
+        "Rest",
+        "Follow up"
+      ]
+    },
+    {
+      "name": "Psoriasis",
+      "description": "Psoriasis is a common skin disorder that forms thick, red, bumpy patches covered with silvery scales. They can pop up anywhere, but most appear on the scalp, elbows, knees, and lower back. Psoriasis can't be passed from person to person. It does sometimes happen in members of the same family.",
+      "precautions": [
+        "Wash hands with warm soapy water",
+        "Stop bleeding using pressure",
+        "Consult doctor",
+        "Salt baths"
+      ]
+    },
+    {
+      "name": "Tuberculosis",
+      "description": "Tuberculosis (TB) is an infectious disease usually caused by Mycobacterium tuberculosis (MTB) bacteria. Tuberculosis generally affects the lungs, but can also affect other parts of the body. Most infections show no symptoms, in which case it is known as latent tuberculosis.",
+      "precautions": [
+        "Cover mouth",
+        "Consult doctor",
+        "Medication",
+        "Rest"
+      ]
+    },
+    {
+      "name": "Typhoid",
+      "description": "An acute illness characterized by fever caused by infection with the bacterium Salmonella typhi. Typhoid fever has an insidious onset, with fever, headache, constipation, malaise, chills, and muscle pain. Diarrhea is uncommon, and vomiting is not usually severe.",
+      "precautions": [
+        "Eat high calorie vegitables",
+        "Antiboitic therapy",
+        "Consult doctor",
+        "Medication"
+      ]
+    },
+    {
+      "name": "Urinary tract infection",
+      "description": "Urinary tract infection: An infection of the kidney, ureter, bladder, or urethra. Abbreviated UTI. Not everyone with a UTI has symptoms, but common symptoms include a frequent urge to urinate and pain or burning when urinating.",
+      "precautions": [
+        "Drink plenty of water",
+        "Increase vitamin c intake",
+        "Drink cranberry juice",
+        "Take probiotics"
+      ]
+    },
+    {
+      "name": "Varicose veins",
+      "description": "A vein that has enlarged and twisted, often appearing as a bulging, blue blood vessel that is clearly visible through the skin. Varicose veins are most common in older adults, particularly women, and occur especially on the legs.",
+      "precautions": [
+        "Lie down flat and raise the leg high",
+        "Use oinments",
+        "Use vein compression",
+        "Dont stand still for long"
+      ]
+    }
+  ],
+  "evaluation": {
+    "note": "Held-out unseen symptom patterns, 30-100% of symptoms mentioned, 0-2 unrelated symptoms added",
+    "xgboost": {
+      "top-1 accuracy": 0.9527,
+      "top-3 accuracy": 0.9937,
+      "macro F1": 0.9545,
+      "log loss": 0.1423,
+      "train time (s)": 16.9
+    },
+    "calibrated_ece": 0.007658586228216007,
+    "robustness": [
+      {
+        "share of symptoms mentioned": 0.3,
+        "top-1": 0.741,
+        "top-3": 0.899
+      },
+      {
+        "share of symptoms mentioned": 0.4,
+        "top-1": 0.819,
+        "top-3": 0.933
+      },
+      {
+        "share of symptoms mentioned": 0.5,
+        "top-1": 0.894,
+        "top-3": 0.96
+      },
+      {
+        "share of symptoms mentioned": 0.6,
+        "top-1": 0.946,
+        "top-3": 0.981
+      },
+      {
+        "share of symptoms mentioned": 0.7,
+        "top-1": 0.972,
+        "top-3": 0.991
+      },
+      {
+        "share of symptoms mentioned": 0.8,
+        "top-1": 0.988,
+        "top-3": 0.997
+      },
+      {
+        "share of symptoms mentioned": 0.9,
+        "top-1": 0.997,
+        "top-3": 0.999
+      },
+      {
+        "share of symptoms mentioned": 1.0,
+        "top-1": 1.0,
+        "top-3": 1.0
+      }
+    ]
+  }
+}

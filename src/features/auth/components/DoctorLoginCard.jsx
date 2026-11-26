@@ -9,24 +9,28 @@ export function DoctorLoginCard({
   loginError,
   onCredentialChange,
   onSubmit,
+  onForgotPassword,
 }) {
   return (
     <form
       onSubmit={onSubmit}
+      style={{ "--m-base": "380ms", "--m-step": "60ms" }}
       className="
-        h-[780px] w-[980px]
-        rounded-[22px]
+        m-stagger
+        w-full
+        rounded-[18px] sm:rounded-[22px]
         border border-[#26354F]
         bg-[#121827]
-        px-[34px] pb-[20px] pt-[39px]
+        px-[18px] pb-[22px] pt-[26px]
+        sm:px-[34px] sm:pb-[26px] sm:pt-[39px]
         shadow-[0_28px_80px_rgba(0,0,0,0.22)]
       "
     >
-      <h1 className="text-[29px] font-black leading-none tracking-[0.01em] text-[#EEF4FC]">
+      <h1 className="text-[24px] sm:text-[29px] font-black leading-none tracking-[0.01em] text-[#EEF4FC]">
         {content.title}
       </h1>
 
-      <p className="mt-[19px] border-b border-[#2A3852] pb-[13px] text-[14px] font-medium tracking-[0.04em] text-[#8B96AA]">
+      <p className="mt-[14px] sm:mt-[19px] border-b border-[#2A3852] pb-[13px] text-[13px] sm:text-[14px] font-medium tracking-[0.04em] text-[#8B96AA]">
         {content.subtitle}
       </p>
 
@@ -104,7 +108,7 @@ export function DoctorLoginCard({
         </div>
       </div>
 
-      <div className="mt-[17px] flex items-center justify-between">
+      <div className="mt-[17px] flex flex-wrap items-center justify-between gap-[10px]">
         <label className="flex cursor-pointer items-center gap-[7px] text-[13px] font-medium leading-none text-[#8C97AB]">
           <input
             type="checkbox"
@@ -120,7 +124,8 @@ export function DoctorLoginCard({
 
         <button
           type="button"
-          className="text-[12px] font-bold leading-none text-[#00D4E9]"
+          onClick={onForgotPassword}
+          className="text-[12px] font-bold leading-none text-[#00D4E9] transition hover:text-[#5BE6F3] hover:underline underline-offset-4"
         >
           {content.forgotPassword}
         </button>

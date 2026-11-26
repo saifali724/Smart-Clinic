@@ -110,8 +110,12 @@ export function useSignupCredentials() {
         setSignupError("Please enter a valid email address.");
       } else if (error.code === "auth/weak-password") {
         setSignupError("Password is too weak. Use at least 6 characters.");
+      } else if (error.code === "auth/operation-not-allowed") {
+        setSignupError("Email/password sign-up is turned off in Firebase (Authentication → Sign-in method).");
+      } else if (error.code === "auth/network-request-failed") {
+        setSignupError("No internet connection. Please check your network and try again.");
       } else {
-        setSignupError("Signup failed. Please try again.");
+        setSignupError(`Signup failed: ${error.message || "please try again."}`);
       }
     } finally {
       setIsSubmitting(false);

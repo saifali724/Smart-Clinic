@@ -18,3 +18,12 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+# Firebase service key (backend password reset) — never commit
+serviceAccountKey.json
+*firebase-adminsdk*.json
+
+# Patient files copied to this PC (real medical data) — never commit
+patient-data/
+
+# Python environments
+.venv/

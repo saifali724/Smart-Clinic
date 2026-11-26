@@ -4,23 +4,22 @@ import { systemLog } from "../data/idScannerContent";
 
 export function SystemLog() {
   return (
-    <div className="mt-[16px] rounded-[12px] border border-[#24324D] bg-[#0B0E14] px-[18px] py-[15px]">
-      <div className="mb-[12px] flex items-center gap-[8px]">
-        <span className="h-[7px] w-[7px] rounded-full bg-[#3CF3A7] shadow-[0_0_10px_rgba(60,243,167,0.8)]" />
-        <p className="text-[10px] font-black uppercase tracking-[0.1em] text-[#8B96AA]">
-          System Log
-        </p>
-      </div>
+    <div style={{ animationDelay: "560ms" }} className="s-up mt-[16px] h-[140px] shrink-0 overflow-hidden rounded-[14px] border border-[#2E3852] bg-[#1A1F2E] px-[14px] pt-[15px] sm:px-[19px]">
+      <p className="flex items-center gap-[6px] text-[11px] font-bold uppercase leading-[13px] text-[#32E293]">
+        <span className="s-blink h-[7px] w-[7px] rounded-full bg-[#32E293]" />
+        System Log
+      </p>
 
-      <div className="space-y-[7px] font-mono">
+      <div className="mt-[7px] space-y-[9px]">
         {systemLog.map((entry, i) => (
           <p
             key={i}
-            className={`text-[11px] leading-[16px] ${
-              entry.tone === "primary" ? "text-[#00C2E0]" : "text-[#8B96AA]"
+            style={{ animationDelay: `${700 + i * 160}ms` }}
+            className={`s-type truncate whitespace-pre text-[11px] font-normal leading-[13px] ${
+              entry.tone === "primary" ? "text-[#00BFD8]" : "text-[#8C99B8]"
             }`}
           >
-            <span className="text-[#59657B]">[{entry.time}]</span> {entry.text}
+            {`[${entry.time}]  ${entry.text}`}
           </p>
         ))}
       </div>

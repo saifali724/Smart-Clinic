@@ -18,26 +18,26 @@ export function SignupCard() {
 
   return (
     <section
-      className="w-[980px] rounded-[30px] border border-[#26344F] bg-[#151B2B] px-[48px] py-[38px] shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+      className="w-full rounded-[20px] border border-[#26344F] bg-[#151B2B] px-[18px] py-[24px] shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:rounded-[24px] sm:px-[32px] sm:py-[32px] xl:rounded-[30px] xl:px-[48px] xl:py-[38px]"
       style={{ animation: "fadeSlideUp 0.7s ease both", animationDelay: "150ms" }}
     >
       {/* Header */}
       <h1
-        className="text-[34px] font-extrabold leading-none tracking-[0.01em] text-[#F5FBFF]"
+        className="text-[26px] font-extrabold leading-[1.1] sm:text-[30px] xl:text-[34px] tracking-[0.01em] text-[#F5FBFF]"
         style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "200ms" }}
       >
         {signupContent.form.title}
       </h1>
 
       <p
-        className="mt-[12px] text-[15px] font-medium text-[#77869B]"
+        className="mt-[10px] text-[13px] font-medium leading-[19px] text-[#77869B] sm:mt-[12px] sm:text-[15px] sm:leading-normal"
         style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "250ms" }}
       >
         {signupContent.form.subtitle}
       </p>
 
       <div
-        className="mt-[16px] flex h-[28px] w-[210px] items-center justify-center rounded-full border border-[#08CFE8] text-[11px] font-semibold text-[#08D4E9]"
+        className="mt-[16px] inline-flex h-[28px] items-center justify-center rounded-full px-[14px] border border-[#08CFE8] text-[11px] font-semibold text-[#08D4E9]"
         style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "300ms" }}
       >
         {signupContent.form.stepBadge}
@@ -46,7 +46,7 @@ export function SignupCard() {
       <div className="mt-[18px] h-px w-full bg-[#24314A]" />
 
       <form onSubmit={submitSignup} className="mt-[20px]">
-        <div className="grid grid-cols-2 gap-x-[20px] gap-y-[16px]">
+        <div className="grid grid-cols-1 gap-x-[20px] gap-y-[14px] sm:grid-cols-2 sm:gap-y-[16px]">
           {[
             { field: "firstName", type: "text" },
             { field: "lastName", type: "text" },
@@ -180,7 +180,7 @@ export function SignupCard() {
           <label className="mb-[8px] block text-[10px] font-extrabold tracking-[0.08em] text-[#77869B]">
             {signupContent.form.uploadTitle}
           </label>
-          <div className="flex h-[58px] items-center rounded-[9px] border border-[#252F45] bg-[#1A2133] px-[18px] transition-all duration-300 hover:border-[#08CFE8]/40 hover:bg-[#1D2540]">
+          <div className="flex min-h-[58px] items-center rounded-[9px] py-[10px] border border-[#252F45] bg-[#1A2133] px-[18px] transition-all duration-300 hover:border-[#08CFE8]/40 hover:bg-[#1D2540]">
             <span className="mr-[14px] text-[20px] text-[#8EA6BE]">⌕</span>
             <div>
               <p className="text-[13px] font-medium text-[#8EA6BE]">
@@ -209,27 +209,27 @@ export function SignupCard() {
 
         {/* Agreement */}
         <label
-          className="mt-[16px] flex items-center gap-[10px] text-[12px] font-medium text-[#8794A9]"
+          className="mt-[16px] flex items-start gap-[10px] text-[12px] font-medium leading-[17px] text-[#8794A9]"
           style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "1000ms" }}
         >
           <input
             type="checkbox"
             checked={credentials.agreeTerms}
             onChange={(e) => updateCredential("agreeTerms", e.target.checked)}
-            className="h-[14px] w-[14px] accent-[#08D4E9]"
+            className="mt-[1px] h-[14px] w-[14px] shrink-0 accent-[#08D4E9]"
           />
           <span>{signupContent.form.agreement}</span>
         </label>
 
         {/* Buttons */}
         <div
-          className="mt-[18px] flex items-center gap-[28px]"
+          className="mt-[18px] flex flex-col items-stretch gap-[14px] sm:flex-row sm:items-center sm:gap-[28px]"
           style={{ animation: "fadeSlideUp 0.5s ease both", animationDelay: "1050ms" }}
         >
           <button
             type="submit"
             disabled={isSubmitting}
-            className="h-[50px] flex-1 rounded-[9px] bg-[#08D4E9] text-[14px] font-extrabold text-[#06101D] shadow-[0_18px_35px_rgba(8,212,233,0.24)] transition-all duration-300 hover:bg-[#19E6F4] hover:shadow-[0_18px_40px_rgba(8,212,233,0.4)] hover:scale-[1.01] disabled:opacity-70"
+            className="min-h-[50px] flex-1 rounded-[9px] bg-[#08D4E9] px-[14px] py-[10px] text-[14px] font-extrabold text-[#06101D] shadow-[0_18px_35px_rgba(8,212,233,0.24)] transition-all duration-300 hover:bg-[#19E6F4] hover:shadow-[0_18px_40px_rgba(8,212,233,0.4)] hover:scale-[1.01] disabled:opacity-70"
           >
             {isSubmitting ? "Creating account..." : `${signupContent.form.button} →`}
           </button>
